@@ -39,6 +39,7 @@ create table agendamento_area_lazer(
     cod_area_lazer INT NOT NULL AUTO_INCREMENT,
     data_agendou DATETIME,
     data_entrega DATETIME,
+    PRIMARY KEY (cod_agendamento)
     
 );
 
