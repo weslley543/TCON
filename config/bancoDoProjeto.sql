@@ -6,7 +6,7 @@ create table usuario(
     email varchar(100)
     senha varchar(60) NOT NULL,
     tipo_usuario boolean NOT NULL,
-    PRIMARY KEY (cod_usuario)
+    PRIMARY KEY (cod_usuario) 
 
 );
 
