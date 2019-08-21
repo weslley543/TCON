@@ -1,0 +1,21 @@
+
+
+
+.containerCenter{
+    padding-top: 2%;
+    background-image: url(https://blog.townsq.com.br/wp-content/uploads/2018/03/Sustentabilidade-em-condom%C3%ADnios.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: scroll;
+}
+
+
+.logo{
+    background-color: none;
+    margin: auto auto 15% auto;
+    text-align: center;
+    font-size: large;
+    height: 100px;
+    font: bold 30px arial, sans-serif;   
+    color: lightblue;
+}
