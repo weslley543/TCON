@@ -1,4 +1,4 @@
-CREATE DATABASE TCON;
+create database TCON
 
 create table usuario(
     cod_usuario INT NOT NULL AUTO_INCREMENT,
@@ -6,9 +6,6 @@ create table usuario(
     email varchar(100),
     senha varchar(60) NOT NULL,
     tipo_usuario boolean NOT NULL,
-<<<<<<< HEAD
-    PRIMARY KEY (cod_usuario) 
-=======
     PRIMARY KEY (cod_usuario)
 );
 
@@ -30,7 +27,6 @@ create table servico(
     CONSTRAINT FOREIGN KEY (cod_servico_tipo) REFERENCES servicotipo (cod_servico_tipo),
     CONSTRAINT FOREIGN KEY (cod_usuario) REFERENCES usuario (cod_usuario)
 );
->>>>>>> feature/weslley
 
 create table area_lazer(
     cod_area INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
