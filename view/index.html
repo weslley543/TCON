@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+
     <!-- Bootstrap CSS -->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="../assets/style/style.css">
+
+    <script  type="text/javascript" src="../assets/js/js.js"> </script>
+
 
     <title>TCON - Condominios Inteligentes</title>
 
@@ -15,20 +22,42 @@
 </head>
 
 
-<body>
-    
-    <div class="form-group row">
-        <label for="staticEmail" class="col-sm-2 col-form-label"> Email </label>
-        <div class="col-sm-10">
-           <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@servidor.com">
-        </div>    
+<body class="containerCenter">
+
+<div class="container logo"> 
+    <h2> TCON - Condomínios Inteligentes </h2> 
+</div>
+
+
+    <div class="container center-block">
+        <div class="row">
+            <div class="col-lg-12">
+                            <form >  
+                              <div class="form-group row justify-content-center">
+                                  <div class="col-sm-5">
+                                     <input type="email" class="form-control" id="staticEmail" placeholder="email@servidor.com">
+                                  </div>    
+                              </div>
+                          
+                          
+                              <div class="form-group row justify-content-center ">
+                                  <div class="col-sm-5">
+                                      <input type="password" class="form-control" id="inputPassword"   placeholder="Insira sua senha" >
+                                  </div>   
+                              </div>
+                          
+                              <div class="form-group row justify-content-center"  >
+                                  <button type="button" class="btn btn-dark col-sm-2" id="btn-login" onclick="emptyEmail()"> Login  </button>
+                              </div>
+
+
+                              </div>
+                          
+                          </form>
+
+            </div>
+        </div>
     </div>
-
-    <div class="form-group row">
-        
-    </div>
-
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
