@@ -6,6 +6,12 @@ create table usuario(
     email varchar(100),
     senha varchar(60) NOT NULL,
     tipo_usuario boolean NOT NULL,
+    cpf_usuario varchar(14)NOT NULL,
+    rg_usuario varchar (20),
+    endereco_usuario varchar(80),
+    casa_usuario varchar (4),
+    telefone_usuario varchar (11),
+    celular_usuario varchar (12)
     PRIMARY KEY (cod_usuario)
 );
 

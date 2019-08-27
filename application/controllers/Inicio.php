@@ -21,5 +21,9 @@ class Inicio extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('Inicio');
+	
+	}
+	public function cadastro(){
+		$this->load->view('Cadastro');
 	}
 }

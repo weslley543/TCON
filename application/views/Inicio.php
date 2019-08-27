@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
@@ -25,7 +26,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 <body class="containerCenter">
-
 <div class="container logo"> 
     <h2> TCON - Condomínios Inteligentes </h2> 
 </div>
@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                  
                               </div>
                               <div class="form-group row justify-content-center">
-                              <a href="">Ainda não é cadastrado ? Não tem problema, realize o seu cadastro aqui !</a>
+                              <a href="<?= base_url('Inicio/cadastro');?>">Ainda não é cadastrado ? Não tem problema, realize o seu cadastro aqui !</a>
 
                               </div>
 
