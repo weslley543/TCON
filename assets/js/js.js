@@ -1,5 +1,5 @@
 // Funcoes de Verificaçao de erros
-
+var senha;
 
 function emptyEmail(){
     var email = document.getElementById("staticEmail").value;
@@ -13,11 +13,22 @@ function emptyEmail(){
     }
 }
 
+//verificando se as senhas estão corretas
 
-//Verificar a senha de entrada: 
+$("#senha").focusout(function() {
+    senha = (this).value;
+});
 
-function verifyPassword(paswword){
-}
+$("#senha2").focusout(function(){
+    var senha2 = (this).value;
+    if(senha2!=senha){
+        $('#senhaErrada').text('As senhas não correspondem').css('color', 'red');
+    }else if(senha2 =='' || senha ==''){
+        $('#senhaErrada').text('Esse campo não pode ser vazio').css('color', 'red');
+    }else{
+        $('#senhaErrada')[0].innerText=""
+    }
+})
 
 $('#cpf').mask('999.999.999-99');
 $('#telefone').mask('(99)9999-9999');

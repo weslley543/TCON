@@ -14,42 +14,51 @@
                         Nome :
                         <input type="text" name="Nome"  class="form-control" maxlenght="60" minlenght="4" placeholder="Ex : José da Silva">
                         Email : 
-                        <input type="text" class="form-control" maxlenght="60" minlenght="12" placeholder="Ex : josedasilva@algumemail.com">
-                        Senha :
-                        <input type="password" class="form-control" placeholder="123456">
-                        Repita sua senha : 
-                        <input type="password" class="form-control" placeholder="123456">
+                        <input type="text" name="Email" class="form-control" maxlenght="60" minlenght="12" placeholder="Ex : josedasilva@algumemail.com">
+                        <div class="row">
+                            <div class="col-md-6">
+                                Senha :
+                                <input type="password" name="senha" id="senha" class="form-control" placeholder="123456">
+                            </div>
+                            <div class="col-md-6" id="senhaErrada"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                Repita sua senha :
+                                <input type="password" name="senha2" id="senha2" class="form-control" placeholder="123456">
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 CPF : 
-                                <input type="text" class="form-control" id="cpf" maxlenght="14" minlenght="14" placeholder="Ex : 222.222.222-22">
+                                <input type="text" name="cpf" class="form-control" id="cpf" maxlenght="14" minlenght="14" placeholder="Ex : 222.222.222-22">
                             </div>
                             <div class="col-md-6">
                                 RG :
-                                <input type="text" maxlenght="20" class="form-control" placeholder="Ex : 123456789">
+                                <input type="text" name="rg" maxlenght="20" class="form-control" placeholder="Ex : 123456789">
                             </div>
                         </div>
                         <div class="row">
                         <div class="col-md-8">
                             Endereço : 
-                            <input type="text" maxlenght="80" class="form-control" placeholder="Ex : Rua do Mânganes">
+                            <input type="text" name="rua" maxlenght="80" class="form-control" placeholder="Ex : Rua do Mânganes">
                         </div>
                         <div class="col-md-4">
                             Numero : 
-                            <input type="text" maxlenght="80" class="form-control" placeholder="1234">
+                            <input type="text" name="numero da casa"  maxlenght="80" class="form-control" placeholder="1234">
                         </div>  
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 Telefone Residencial :
-                                <input type="text" class="form-control" id="telefone" placeholder = "Colocar o telefone com o DDD"> 
+                                <input type="text" name="telresidencial" class="form-control" id="telefone" placeholder = "Colocar o telefone com o DDD"> 
                             </div>
                             <div class="col-md-6">
                                 Telefone Celular :
-                                <input type="text" class="form-control" id="celular" placeholder = "Colocar o telefone com o DDD"> 
+                                <input type="text" name="celualar" class="form-control" id="celular" placeholder = "Colocar o telefone com o DDD"> 
                             </div>
                         </div>
-                        <input type="submit" class="btn btn-success" value="Cadastrar">
+                        <input type="submit" class="btn btn-success" value="Cadastrar" style="margin-top:20px;">
                     </div>
                 </form>
             </div>
