@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-md-4">
                             Numero : 
-                            <input type="text" name="numero da casa"  maxlenght="80" class="form-control" placeholder="1234">
+                            <input type="text" name="numerocasa"  maxlenght="80" class="form-control" placeholder="1234">
                         </div>  
                         </div>
                         <div class="row">
@@ -55,7 +55,7 @@
                             </div>
                             <div class="col-md-6">
                                 Telefone Celular :
-                                <input type="text" name="celualar" class="form-control" id="celular" placeholder = "Colocar o telefone com o DDD"> 
+                                <input type="text" name="celular" class="form-control" id="celular" placeholder = "Colocar o telefone com o DDD"> 
                             </div>
                         </div>
                         <input type="submit" class="btn btn-success" value="Cadastrar" style="margin-top:20px;">

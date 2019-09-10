@@ -11,7 +11,7 @@ create table usuario(
     endereco_usuario varchar(80),
     casa_usuario varchar (4),
     telefone_usuario varchar (11),
-    celular_usuario varchar (12)
+    celular_usuario varchar (12),
     PRIMARY KEY (cod_usuario)
 );
 
