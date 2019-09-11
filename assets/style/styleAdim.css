@@ -1,0 +1,21 @@
+
+
+.teste{
+    border: 2px solid;
+    border-color: brown;
+
+}
+
+.sidebar{
+    background-color: #343a40;
+    color: aliceblue;
+
+}
+
+a{
+    color: white;
+}
+
+li:hover{
+    background-color: darkgrey;
+}
