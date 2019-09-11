@@ -26,4 +26,9 @@ class Inicio extends CI_Controller {
 	public function cadastro(){
 		$this->load->view('Cadastro');
 	}
+	public function dashboard(){
+		$this->load->view('painel_header');
+		$this->load->view('dashboard');
+		$this->load->view('painel_footer');
+	}
 }
