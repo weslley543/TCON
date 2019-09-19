@@ -35,19 +35,19 @@
         </nav>
     </nav>
     <div class="container border" style="width:800px; heigh:600px; border-radius: 5px; padding:30px;">
-        <form action="Controllers/">
+        <form action="../Controllers/Usuario.php" method="POST">
              <div class=" row form-group">
                  <div class="col-lg-6">
                      <label>Nome do Usuario</label>
-                     <input type="text" class="form-control" placeholder="Ex : José da Silva">
+                     <input type="text" name="nome_usuario" class="form-control" placeholder="Ex : José da Silva">
                 </div>
                 <div class="col-lg-6">
                      <label>Email</label>
-                     <input type="email" class="form-control" placeholder="Ex :josedasilva@tcon.com">
+                     <input type="email" name="email" class="form-control" placeholder="Ex :josedasilva@tcon.com">
                 </div>
                 <div class="col-lg-6" style="margin-top:20px;">
                      <label>Senha</label>
-                     <input type="password" class="form-control">
+                     <input type="password" name="senha" class="form-control">
                 </div>
                 <div class="col-lg-6" style="margin-top:20px;">
                      <label>Repita sua Senha</label>
@@ -55,31 +55,31 @@
                 </div>
                 <div class="col-lg-6" style="margin-top:20px;">
                      <label>RG</label>
-                     <input type="text" class="form-control">
+                     <input type="number" name="rg_usuario" class="form-control">
                 </div>
                 <div class="col-lg-6" style="margin-top:20px;">
                      <label>CPF</label>
-                     <input type="text" class="form-control">
+                     <input type="text" name="cpf_usuario" class="form-control">
                 </div>
                 <div class="col-lg-6" style="margin-top:20px;">
                      <label>Endereço</label>
-                     <input type="text" class="form-control" placehold="Ex : Rua do Mânganes">
+                     <input type="text" name="endereco_usuario" class="form-control" placehold="Ex : Rua do Mânganes">
                 </div>
                 <div class="col-lg-6" style="margin-top:20px;">
                      <label>Número</label>
-                     <input type="text" class="form-control" placeholder="1234">
+                     <input type="text" name="casa_usuario" class="form-control" placeholder="1234">
                 </div>
                 <div class="col-lg-6" style="margin-top:20px;">
                      <label>Telefone Residencial</label>
-                     <input type="text" class="form-control">
+                     <input type="text" name="telefone_usuario" class="form-control">
                 </div>
                 <div class="col-lg-6" style="margin-top:20px;">
                      <label>Telefone Celular</label>
-                     <input type="text" class="form-control" >
+                     <input type="text" name="celular_usuario" class="form-control" >
                 
                 </div>
                 <div class="col-lg-12" style="margin-top:20px;">
-                <button class="btn btn-primary">Cadastrar</button>
+                <button class="btn btn-primary" >Cadastrar</button>
                 </div>
                 
              </div>   

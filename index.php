@@ -28,7 +28,7 @@
                 </ul>
                 <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
                     <li class="nav-item">
-                        <a class="nav-link" target="_self" href="Cadastro.php">Cadastre-se <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" target="_self" href="View/Cadastro.php">Cadastre-se <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
