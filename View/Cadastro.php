@@ -55,7 +55,7 @@
                 </div>
                 <div class="col-lg-6" style="margin-top:20px;">
                      <label>RG</label>
-                     <input type="number" name="rg_usuario" class="form-control">
+                     <input type="text" name="rg_usuario" class="form-control">
                 </div>
                 <div class="col-lg-6" style="margin-top:20px;">
                      <label>CPF</label>
