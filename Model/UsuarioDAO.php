@@ -12,12 +12,36 @@ class UsuarioDAO{
             $cols[] = $coluna;
             $vals[] =  $valor;
         }
-        
+        echo("cadastro");
         $colnames = implode(", ", $cols);
         $colvals = "'".implode("', '", $vals)."'";
         $query = "INSERT INTO usuario ($colnames) values ($colvals)";
         mysqli_query($link,$query);
         mysqli_close($link);
         return true;
+    }
+    public function loginUsuario($dados){
+        $link=mysqli_connect("localhost", "root", "", "tcon");
+        if(!$link){
+            echo 'Erro no servidor';
+            return false;
+        }
+        $dados["senha"]=sha1($dados["senha"]);
+        str_replace($dados["email"],"'","''");
+        $email = $dados["email"];
+        $senha = $dados["senha"];
+        $query = "SELECT * FROM usuario WHERE email=$email AND senha =$senha";
+        if($result = mysqli_query($link,$query)){
+            $linhasRetornadas = mysqli_num_rows($result);
+            echo $linhasRetornadas;
+        }
+
+         if($linhasRetornadas>0){
+             mysqli_close($link);
+             return true;
+        }else{
+             mysqli_close($link);
+             return false;
+         }
     }
 }

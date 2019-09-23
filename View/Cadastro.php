@@ -80,6 +80,7 @@
                 </div>
                 <div class="col-lg-12" style="margin-top:20px;">
                 <button class="btn btn-primary" >Cadastrar</button>
+                <input type="hidden" name="op" value="cadastro"> 
                 </div>
                 
              </div>   

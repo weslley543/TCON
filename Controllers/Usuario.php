@@ -12,24 +12,27 @@ class Usuario{
     }
     public function login($dados){
         $usuarioDAO = new UsuarioDAO();
-        if($usuarioDAO->login()){
-            header('Location: ' . '../View/Painel_usuario.php', true);
-        }else{
-            $dado = '{msg:Erro ao conectar}';
-            header('Content-Type: application/json; charset=utf-8');
-		    echo json_encode($dado,JSON_UNESCAPED_UNICODE);
-        }
+        // if(){
+        //     echo 'logou';
+        // }else{
+        //     echo 'não logou';
+        // }
+        $usuarioDAO->loginUsuario($dados);
     } 
 }
 
 switch ($_SERVER['REQUEST_METHOD']){
-    case 'POST' : $usuario = new Usuario();
-                  $dados = $_POST;
-                  $usuario->cadastrarUsuario($dados);
-                  break; 
-    case 'POST' && $POST["op"] == 'login' :
-                  $usuario = new Usuario();
-                  $dados=$_POST;
-                  $usuario->login($dados);
-
+    case 'POST' && $_POST['op']=='cadastro': 
+                    $usuario = new Usuario();
+                    unset($_POST['op']);
+                    $dados = $_POST;
+                    $usuario->cadastrarUsuario($dados);
+                    break;
+    case 'POST' && $_POST['op']=='login' :
+                    $usuario = new Usuario();
+                    unset($_POST['op']);
+                    $dados = $_POST;
+                    str_replace($dados['email'],"'", "''");
+                    $usuario->login($dados);
+                    break;
 }
