@@ -68,7 +68,8 @@
       </form>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" id="login">Logar</button>
-      </div>
+        <span id="erro"></span>  
+    </div>
     </div>
   </div>
 </div>
@@ -80,13 +81,18 @@
 <script>
     $('#login').on('click', function(e){
         e.preventDefault;
-        console.log($('#formlogin').serialize()+'&op=login');
+        //console.log($('#formlogin').serialize()+'&op=login');
         $.ajax({
             type:'POST',
             url:'Controllers/Usuario.php',
             data : $('#formlogin').serialize()+'&op=login',
             success:function(result){
-                console.log('Deu bom');
+                
+                    if(result){
+                        window.location.href = '../View/Pagina_parabens.html'
+                    }else{
+                        $('#erro').html('Senha ou usuário incorretos, você pode restaurar sua senha clicando <a href="../View/recuperacaoSenha.html">aqui</a>')
+                    }
             }
         })
         

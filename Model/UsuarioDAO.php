@@ -30,18 +30,12 @@ class UsuarioDAO{
         str_replace($dados["email"],"'","''");
         $email = $dados["email"];
         $senha = $dados["senha"];
-        $query = "SELECT * FROM usuario WHERE email=$email AND senha =$senha";
-        if($result = mysqli_query($link,$query)){
-            $linhasRetornadas = mysqli_num_rows($result);
-            echo $linhasRetornadas;
-        }
-
-         if($linhasRetornadas>0){
-             mysqli_close($link);
-             return true;
+        $query = "SELECT * FROM usuario WHERE email='$email' AND senha ='$senha'";
+        $result = mysqli_query($link, $query);
+        if($result->num_rows>0){
+            return true;
         }else{
-             mysqli_close($link);
-             return false;
-         }
+            return false;
+        }
     }
 }

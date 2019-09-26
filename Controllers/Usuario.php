@@ -12,12 +12,10 @@ class Usuario{
     }
     public function login($dados){
         $usuarioDAO = new UsuarioDAO();
-        // if(){
-        //     echo 'logou';
-        // }else{
-        //     echo 'não logou';
-        // }
-        $usuarioDAO->loginUsuario($dados);
+        $dado = $usuarioDAO->loginUsuario($dados);    
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($dado,JSON_UNESCAPED_UNICODE);
+         
     } 
 }
 
