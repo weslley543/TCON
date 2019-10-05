@@ -68,8 +68,36 @@
       </form>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" id="login">Logar</button>
+        <button type="button" class="btn btn-primary" id="recuperarSenha">Recuperar Senha</button>
         <span id="erro"></span>  
     </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalRec" tabindex="-1" role="dialog" aria-labelledby="modalRecSobre" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalRecSobre">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form id="formRec" action='Controllers/Usuario.php' method="POST">
+        <div class="modal-body">
+            <div class="form-group">
+                
+                <div class="col-md-6">
+                    <label>Email</label>
+                    <input name="email" type="text" name="email" class="form-control">
+                    <input type=hidden name="op" value="recuperacao">
+                    <button class="btn btn-primary" style="margin-top:5px;">Recuperar</button>
+                </div>
+
+            </div>
+         </div>
+      </form>
     </div>
   </div>
 </div>
@@ -96,6 +124,11 @@
             }
         })
         
-    })
+    });
+    $('#recuperarSenha').on('click', function(e){
+        $("#modalLogin").modal('hide');
+        $("#modalRec").modal('show');
+
+    });
 </script>
 </html>
