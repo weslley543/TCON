@@ -24,7 +24,7 @@ class UsuarioDAO{
         $link=mysqli_connect("localhost", "root", "", "tcon");
         if(!$link){
             echo 'Erro no servidor';
-            return false;
+            die();
         }
         $dados["senha"]=sha1($dados["senha"]);
         str_replace($dados["email"],"'","''");
@@ -37,5 +37,13 @@ class UsuarioDAO{
         }else{
             return false;
         }
+    }
+    public function pegarUsuarioEmail($email){
+        $link = mysqli_connect("localhost", "root", "", "tcon");
+        if(!$link){
+            echo "erro interno no servidor";
+            die();
+        }
+        $query="SELECT * FROM usuario WHERE email='$email'";
     }
 }
