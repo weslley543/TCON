@@ -26,35 +26,44 @@ class Usuario{
          
     }
     public function recuperarSenha($dados){
-        $usuarioDAO = new Usuario();
-        $usuarioDAO->pegarUsuarioEmail($dados["email"]);
-        // require('../Helpers/vendor/autoload.php');
-        // $mail = new PHPMailer(true);
-        // try {
-        //     //Server settings
-        //     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-        //     $mail->isSMTP();                                            // Send using SMTP
-        //     $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
-        //     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        //     $mail->Username   = 'weslley082@gmail.com';                     // SMTP username
-        //     $mail->Password   = 'weslley1234';                               // SMTP password
-        //     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-        //     $mail->Port       = 587;                                    // TCP port to connect to
+        $usuarioDAO = new UsuarioDAO();
+        $email = $dados["email"];
+        $token = sha1(random_bytes(20));
+        if($usuarioDAO->pegarUsuarioEmail($email, $token)){
+            require('../Helpers/vendor/autoload.php');
+            $mail = new PHPMailer(true);
+            try {
+                //Server settings
+                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+                $mail->isSMTP();                                            // Send using SMTP
+                $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+                $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+                $mail->Username   = 'weslley082@gmail.com';                     // SMTP username
+                $mail->Password   = 'weslley1234';                               // SMTP password
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+                $mail->Port       = 587;                                    // TCP port to connect to
         
-        //     //Recipients
-        //     $mail->setFrom('weslley082@gmail.com', 'Mailer');
-        //     $mail->addAddress($dados["email"]);
-        //     $mail->CharSet = 'utf-8';
-        //     // Content
-        //     $mail->isHTML(true);                                  // Set email format to HTML
-        //     $mail->Subject = 'Recuperação de senha';
-        //     $mail->Body    = '<p>Você perdeu a sua senha ?? não tem problema</p>';
+                //Recipients
+                $mail->setFrom('weslley082@gmail.com', 'Mailer');
+                $mail->addAddress($dados["email"]);
+                $mail->CharSet = 'utf-8';
+                // Content
+                $mail->isHTML(true);                                  // Set email format to HTML
+                $mail->Subject = 'Recuperação de senha';
+                $mail->Body    = '<p>Você perdeu a sua senha ?? não tem problema utilize esse token : '.$token.'</p>';
         
-        //     $mail->send();
-        //     echo 'Message has been sent';
-        // } catch (Exception $e) {
-        //     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        // }
+                $mail->send();
+                echo 'Message has been sent';
+            } catch (Exception $e) {
+                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+              }
+        }else{
+            echo "não foi possivel recuperar senha pq não existe usuario";
+        }
+        
+    }
+    public function resetSenha($token){
+
     } 
 }
 

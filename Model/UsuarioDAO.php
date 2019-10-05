@@ -38,12 +38,22 @@ class UsuarioDAO{
             return false;
         }
     }
-    public function pegarUsuarioEmail($email){
+    public function pegarUsuarioEmail($email, $token){
         $link = mysqli_connect("localhost", "root", "", "tcon");
         if(!$link){
             echo "erro interno no servidor";
             die();
         }
-        $query="SELECT * FROM usuario WHERE email='$email'";
+        $query="SELECT cod_usuario FROM usuario WHERE email='$email'";
+        $result = mysqli_query($link, $query);
+        if($result->num_rows>0){
+            
+            $cod = $result->fetch_array(MYSQLI_ASSOC);
+            $query = "UPDATE usuario SET token = '$token', dataexpiracao = DATE_ADD(NOW(), INTERVAL 1 HOUR) where cod_usuario =".$cod["cod_usuario"];
+            mysqli_query($link, $query);
+            return true;
+        }else{
+            return false;
+        }
     }
 }
