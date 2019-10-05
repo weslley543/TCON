@@ -89,7 +89,7 @@
             success:function(result){
                 
                     if(result){
-                        window.location.href = '../View/Pagina_parabens.html'
+                        window.location.href = 'View/Pagina_parabens.html'
                     }else{
                         $('#erro').html('Senha ou usuário incorretos, você pode restaurar sua senha clicando <a href="../View/recuperacaoSenha.html">aqui</a>')
                     }
