@@ -88,7 +88,7 @@
         <div class="modal-body">
             <div class="form-group">
                 
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label>Email</label>
                     <input name="email" type="text" name="email" class="form-control">
                     <input type=hidden name="op" value="recuperacao">

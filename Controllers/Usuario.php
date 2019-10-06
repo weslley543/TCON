@@ -28,8 +28,8 @@ class Usuario{
     public function recuperarSenha($dados){
         $usuarioDAO = new UsuarioDAO();
         $email = $dados["email"];
-        $token = sha1(random_bytes(20));
-        if($usuarioDAO->pegarUsuarioEmail($email, $token)){
+        $senhaNova = sha1(random_bytes(4));
+        if($usuarioDAO->pegarUsuarioEmail($email, $senhaNova)){
             require('../Helpers/vendor/autoload.php');
             $mail = new PHPMailer(true);
             try {
@@ -50,25 +50,21 @@ class Usuario{
                 // Content
                 $mail->isHTML(true);                                  // Set email format to HTML
                 $mail->Subject = 'Recuperação de senha';
-                $mail->Body    = '<p>Você perdeu a sua senha ?? não tem problema utilize esse token : '.$token.'</p>';
+                $mail->Body    = '<p>Sua nova senha é  : '.$senhaNova.'</p>';
         
                 $mail->send();
-                echo 'Message has been sent';
+                header('Location: ' . '../View/Pagina_parabens.html', true);
+                exit();
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
               }
         }else{
-            echo "não foi possivel recuperar senha pq não existe usuario";
+            $check = false;
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode($dado,JSON_UNESCAPED_UNICODE);
         }
         
     }
-    public function resetarSenha($dados){
-        $usuarioDAO = new UsuarioDAO();
-        if($usuarioDAO->resetarSenha($dados)){
-            header('Location: ' . '../View/Pagina_SenhaAlterada.html', true);
-            exit();
-        }
-    } 
 }
 
 switch ($_SERVER['REQUEST_METHOD']){
@@ -91,9 +87,4 @@ switch ($_SERVER['REQUEST_METHOD']){
                     str_replace($dados['email'], "'", "''");
                     $usuario->recuperarSenha($dados);
                     break;
-    case 'POST' && $_POST['op']=='reset' :
-                   $usuario = new Usuario();
-                   $dados = $_POST;
-                   $usuario->resetarSenha($dados);
-                   break;
 }
