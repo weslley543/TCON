@@ -62,8 +62,12 @@ class Usuario{
         }
         
     }
-    public function resetSenha($token){
-
+    public function resetarSenha($dados){
+        $usuarioDAO = new UsuarioDAO();
+        if($usuarioDAO->resetarSenha($dados)){
+            header('Location: ' . '../View/Pagina_SenhaAlterada.html', true);
+            exit();
+        }
     } 
 }
 
@@ -87,4 +91,9 @@ switch ($_SERVER['REQUEST_METHOD']){
                     str_replace($dados['email'], "'", "''");
                     $usuario->recuperarSenha($dados);
                     break;
+    case 'POST' && $_POST['op']=='reset' :
+                   $usuario = new Usuario();
+                   $dados = $_POST;
+                   $usuario->resetarSenha($dados);
+                   break;
 }

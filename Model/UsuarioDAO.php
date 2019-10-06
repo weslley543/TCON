@@ -56,4 +56,22 @@ class UsuarioDAO{
             return false;
         }
     }
+    public function resetarSenha($dados){
+        $link = mysqli_connect("localhost", "root", "", "tcon");
+        if(!$link){
+            echo "Erro no servidor";
+            die();
+        }   
+        $email = str_replace($dados["email"], "'", "''");
+        $senha = sha1($dados["senha"]);
+        $token = $dados["token"];
+        $data = date('Y-m-d H:i:s');
+        $query = "SELECT cod_usuario from usuario where email = '$email' and token = '$token' and dataexpiracao ";
+        $result = mysqli($link, $query);
+        if($result->num_rows>0){
+
+        }
+
+        
+    }
 }
