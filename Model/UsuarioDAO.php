@@ -47,7 +47,7 @@ class UsuarioDAO{
         $query="SELECT cod_usuario FROM usuario WHERE email='$email'";
         $result = mysqli_query($link, $query);
         if($result->num_rows>0){
-            
+            $senhaNova = sha1($senhaNova);
             $cod = $result->fetch_array(MYSQLI_ASSOC);
             $query = "UPDATE usuario SET senha = '$senhaNova' where cod_usuario =".$cod["cod_usuario"];
             mysqli_query($link, $query);
