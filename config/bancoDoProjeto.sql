@@ -38,11 +38,34 @@ create table area_lazer(
     desc_area VARCHAR (60) NOT NULL 
 );
 
+-- Adicionado Cod. do usuario no agendamento da area de lazer 
 create table agendamento_area_lazer(
     cod_agendamento INT NOT NULL AUTO_INCREMENT,
     cod_area_lazer INT NOT NULL,
+    cod_usuario int not null,
     data_agendou DATETIME,
     data_entrega DATETIME,
     PRIMARY KEY (cod_agendamento),
+
     CONSTRAINT FOREIGN KEY (cod_area_lazer) REFERENCES area_lazer (cod_area)
+    CONSTRAINT FOREIGN KEY (cod_usuario) REFERENCES usuario(cod_usuario)
+);
+
+
+create table historico_exclusao(
+    cod_admin int not null,
+    cod_usuario int not null,
+    data_exclusao DATE not null,
+)
+
+create table historico_os_realizada(
+    cod_servico INT NOT NULL ,
+    obs_servico varchar(60),
+    cod_usuario int NOT NULL,
+    data_cadatrada DATETIME NOT NULL,
+    data_concluida DATETIME NOT NULL
+
+    CONSTRAINT FOREIGN KEY (cod_servico) REFERENCES servico (cod_servico),
+    CONSTRAINT FOREIGN KEY (cod_usuario) REFERENCES usuario (cod_usuario)
+
 );
