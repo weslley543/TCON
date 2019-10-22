@@ -2,11 +2,12 @@
 
 class UsuarioDAO{
     public function insertUsuario($dados){
-        $link=mysqli_connect("localhost", "root", "", "tcon");
+        $link=mysqli_connect("localhost", "root", "", "TCON");
         if(!$link){
             echo 'Erro interno do servidor';
             return false;
         }
+        var_dump($link);
         $dados["senha"]=sha1($dados["senha"]);
         foreach($dados as $coluna => $valor){
             $cols[] = $coluna;
@@ -16,7 +17,9 @@ class UsuarioDAO{
         $colnames = implode(", ", $cols);
         $colvals = "'".implode("', '", $vals)."'";
         $query = "INSERT INTO usuario ($colnames) values ($colvals)";
-        mysqli_query($link,$query);
+        $result = mysqli_query($link,$query);
+        var_dump($result);
+        die();
         mysqli_close($link);
         return true;
     }
