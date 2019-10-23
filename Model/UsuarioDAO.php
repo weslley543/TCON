@@ -2,7 +2,7 @@
 
 class UsuarioDAO{
     public function insertUsuario($dados){
-        $link= mysqli_connect("localhost", "root", "Weslley901@@", "TCON");
+        $link= mysqli_connect("localhost", "root", "", "tcon");
         if(!$link){
             echo 'Erro interno do servidor';
             return false;

@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Forgot Password</title>
+  <title>TCON - RECUPERAR SENHA</title>
 
   <!-- Custom fonts for this template-->
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -50,10 +50,10 @@
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="register.html">Create an Account!</a>
+                    <a class="small" href="register.php">Crie uma conta !</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="login.html">Already have an account? Login!</a>
+                    <a class="small" href="index.php">Já possui conta? Faça login aqui!</a>
                   </div>
                 </div>
               </div>
