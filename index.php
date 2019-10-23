@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Login</title>
+  <title>TCON - LOGIN</title>
 
   <!-- Custom fonts for this template-->
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -33,7 +33,7 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6 d-none d-lg-block "><img src="assets/img/condominio-sustentavel.jpg" width="500px" height="500px" alt=""></div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
@@ -46,18 +46,19 @@
                     <div class="form-group">
                       <input type="password" name="senha" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha">
                     </div>
-                    <input type="hidden" value="op">
+                    <input type="hidden" name="op" value="login">
                     <div class="form-group">
                     </div>
-                    <a href="index.php" class="btn btn-primary btn-user btn-block">
-                      Login
-                    </a>
+                    <button class="btn btn-primary btn-user btn-block">Login</button>
+                    <span id="error"></span>
                     <hr>
                   </form>
                   <hr>
                   <div class="text-center">
                     <a class="small" href="forgot-password.php">Esqueceu a sua senha ?</a>
+                  
                   </div>
+                  
                   <div class="text-center">
                     <a class="small" href="register.php">Registre-se!</a>
                   </div>
