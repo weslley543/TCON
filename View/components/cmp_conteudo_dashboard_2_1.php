@@ -1,4 +1,4 @@
-<!-- Begin Page  DashBoard Content -->
+        <!-- Begin Page  DashBoard Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
@@ -218,7 +218,3 @@
             </div>
 
         </div> <!-- /.container-fluid -->
-        
-
-      </div>
-      <!-- End of Main Content -->
