@@ -58,6 +58,7 @@ create table historico_exclusao(
     data_exclusao DATE not null,
 )
 
+
 create table historico_os_realizada(
     cod_servico INT NOT NULL ,
     obs_servico varchar(60),
