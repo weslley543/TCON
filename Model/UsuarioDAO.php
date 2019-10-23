@@ -2,7 +2,7 @@
 
 class UsuarioDAO{
     public function insertUsuario($dados){
-        $link=mysqli_connect("localhost", "root", "", "tcon");
+        $link= mysqli_connect("localhost", "root", "Weslley901@@", "TCON");
         if(!$link){
             echo 'Erro interno do servidor';
             return false;
@@ -15,9 +15,13 @@ class UsuarioDAO{
         $colnames = implode(", ", $cols);
         $colvals = "'".implode("', '", $vals)."'";
         $query = "INSERT INTO usuario ($colnames) values ($colvals)";
-        mysqli_query($link,$query);
-        mysqli_close($link);
-        return true;
+        if(mysqli_query($link,$query)){
+            mysqli_close($link);
+            return true;
+        }
+        
+        
+        return false;
     }
     public function loginUsuario($dados){
         $link=mysqli_connect("localhost", "root", "", "tcon");
