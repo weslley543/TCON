@@ -55,8 +55,7 @@ create table agendamento_area_lazer(
 create table historico_exclusao(
     cod_admin int not null,
     cod_usuario int not null,
-<<<<<<< HEAD
-    data_exclusao DATE not null,
+    data_exclusao DATE not null
 )
 
 
@@ -65,13 +64,9 @@ create table historico_os_realizada(
     obs_servico varchar(60),
     cod_usuario int NOT NULL,
     data_cadatrada DATETIME NOT NULL,
-    data_concluida DATETIME NOT NULL
+    data_concluida DATETIME NOT NULL,
 
     CONSTRAINT FOREIGN KEY (cod_servico) REFERENCES servico (cod_servico),
     CONSTRAINT FOREIGN KEY (cod_usuario) REFERENCES usuario (cod_usuario)
 
 );
-=======
-    data_exclusao DATE not null
-);
->>>>>>> ae7ffe5a511f1a300c08d4b66b1295ade53cd95c
