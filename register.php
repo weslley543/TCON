@@ -61,7 +61,7 @@
                 <a class="small" href="forgot-password.html">Recupere sua senha aqui</a>
               </div>
               <div class="text-center">
-                <a class="small" href="login.html">Já possui conta ? faça login aqui</a>
+                <a class="small" href="index.php">Já possui conta ? faça login aqui</a>
               </div>
             </div>
           </div>
