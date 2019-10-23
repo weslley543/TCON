@@ -20,9 +20,19 @@ class Usuario{
     }
     public function login($dados){
         $usuarioDAO = new UsuarioDAO();
-        $dado = $usuarioDAO->loginUsuario($dados);    
-        header('Content-Type: application/json; charset=utf-8');
-        echo json_encode($dado,JSON_UNESCAPED_UNICODE);
+        if($usuarioDAO->loginUsuario($dados)){
+            session_start();
+            $_SESSION["email"]=$dados["email"];
+            $_SESSION["senha"]=$dados["senha"];
+            header('location: ../dashboard.php');
+        }else{
+            unset ($_SESSION['email']);
+            unset ($_SESSION['senha']);
+            
+            echo '<script>alert("Usuario ou senha incorretos tente novamente")</script>';	
+	        echo "<script>window.location = '../index.php';</script>"; 
+        }    
+        
          
     }
     public function recuperarSenha($dados){

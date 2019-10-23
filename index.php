@@ -46,18 +46,19 @@
                     <div class="form-group">
                       <input type="password" name="senha" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha">
                     </div>
-                    <input type="hidden" value="op">
+                    <input type="hidden" name="op" value="login">
                     <div class="form-group">
                     </div>
-                    <a href="index.php" class="btn btn-primary btn-user btn-block">
-                      Login
-                    </a>
+                    <button class="btn btn-primary btn-user btn-block">Login</button>
+                    <span id="error"></span>
                     <hr>
                   </form>
                   <hr>
                   <div class="text-center">
                     <a class="small" href="forgot-password.php">Esqueceu a sua senha ?</a>
+                  
                   </div>
+                  
                   <div class="text-center">
                     <a class="small" href="register.php">Registre-se!</a>
                   </div>
