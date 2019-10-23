@@ -1,5 +1,5 @@
 create database TCON;
-
+use TCON;
 create table usuario(
     cod_usuario INT PRIMARY KEY AUTO_INCREMENT,
     nome_usuario varchar(100) NOT NULL,
@@ -47,7 +47,7 @@ create table agendamento_area_lazer(
     data_entrega DATETIME,
     PRIMARY KEY (cod_agendamento),
 
-    CONSTRAINT FOREIGN KEY (cod_area_lazer) REFERENCES area_lazer (cod_area)
+    CONSTRAINT FOREIGN KEY (cod_area_lazer) REFERENCES area_lazer (cod_area),
     CONSTRAINT FOREIGN KEY (cod_usuario) REFERENCES usuario(cod_usuario)
 );
 
@@ -55,6 +55,7 @@ create table agendamento_area_lazer(
 create table historico_exclusao(
     cod_admin int not null,
     cod_usuario int not null,
+<<<<<<< HEAD
     data_exclusao DATE not null,
 )
 
@@ -70,3 +71,7 @@ create table historico_os_realizada(
     CONSTRAINT FOREIGN KEY (cod_usuario) REFERENCES usuario (cod_usuario)
 
 );
+=======
+    data_exclusao DATE not null
+);
+>>>>>>> ae7ffe5a511f1a300c08d4b66b1295ade53cd95c
