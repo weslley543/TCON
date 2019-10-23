@@ -59,7 +59,7 @@
                     <a class="small" href="forgot-password.html">Esqueceu a sua senha ?</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="register.html">Registre-se!</a>
+                    <a class="small" href="register.php">Registre-se!</a>
                   </div>
                 </div>
               </div>

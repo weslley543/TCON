@@ -14,7 +14,7 @@ class Usuario{
         $usuarioDAO = new UsuarioDAO();
         
         if($usuarioDAO->insertUsuario($dados)){
-            header('Location: ' . '../View/Pagina_parabens.html', true);
+            header('Location: ' . '../register.php', true);
             exit();
         }
     }
@@ -71,6 +71,7 @@ switch ($_SERVER['REQUEST_METHOD']){
     case 'POST' && $_POST['op']=='cadastro': 
                     $usuario = new Usuario();
                     unset($_POST['op']);
+                    unset($_POST['senha2']);
                     $dados = $_POST;
                     $usuario->cadastrarUsuario($dados);
                     break;

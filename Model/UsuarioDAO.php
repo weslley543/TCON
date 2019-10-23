@@ -12,7 +12,6 @@ class UsuarioDAO{
             $cols[] = $coluna;
             $vals[] =  $valor;
         }
-        echo("cadastro");
         $colnames = implode(", ", $cols);
         $colvals = "'".implode("', '", $vals)."'";
         $query = "INSERT INTO usuario ($colnames) values ($colvals)";
