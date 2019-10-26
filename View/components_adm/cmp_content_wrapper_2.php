@@ -189,10 +189,16 @@
 
 
       <!-- Inicio Conteudo da Dashboard  -->
-        <?php 
-         // include("cmp_conteudo_dashboard_2_1.php");
-          include("cmp_table_servicos_2_1.php")        
-        ?>
+       <?php if(isset($_GET['ref'])): ?>
+          <?php 
+            include($_GET['ref'].".php"); 
+          ?>
+      <?php else: ?>
+          <?php  
+            include('cmp_conteudo_dashboard_2_1'.".php"); 
+          ?> 
+       <?php endif?>        
+
       <!-- End of Main Content -->
 
       <!-- Footer -->

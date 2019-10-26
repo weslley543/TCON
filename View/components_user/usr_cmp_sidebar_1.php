@@ -2,10 +2,10 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php?ref=usr_cmp_conteudo_dashboard_2_1">
         <div class="sidebar-brand-icon rotate-n-15">
         </div>
-        <div class="sidebar-brand-text mx-3">TCON</div>
+        <div class="sidebar-brand-text mx-3">TCON - Usuário</div>
       </a>
 
       <!-- Divider -->
@@ -13,11 +13,11 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php?ref=usr_cmp_conteudo_dashboard_2_1">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span> Área do Administrador </span></a>
+          <span> Área do Usuário </span></a>
       </li>
-
+l
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -56,11 +56,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Tipo:</h6>
-            <a class="collapse-item" href="utilities-border.html">Segurança (Portaria)</a>
-            <a class="collapse-item" href="tables_eletrica.html">Elétrica</a>
-            <a class="collapse-item" href="utilities-animation.html">Manutenção </a>
-            <a class="collapse-item" href="utilities-animation.html">Área de Lazer </a>
-            <a class="collapse-item" href="utilities-other.html">Outros</a>
+            <a class="collapse-item" href="index.php?ref=usr_cmp_table_servicos_2_1"> Criar Ordem de Serviço </a>
+            <a class="collapse-item" href="index.php?ref=usr_cmp_table_servicos_2_1"> Pedidos Realizados </a>
           </div>
         </div>
       </li>
@@ -73,7 +70,8 @@
         Addons
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
+    
+      <!-- Nav Item - Pages Collapse Menu 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
@@ -92,7 +90,7 @@
           </div>
         </div>
       </li>
-
+            -->
 
 
       <!--  Itens não Utilizados -->
