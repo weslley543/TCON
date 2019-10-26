@@ -56,4 +56,20 @@ create table historico_exclusao(
     cod_admin int not null,
     cod_usuario int not null,
     data_exclusao DATE not null
+<<<<<<< HEAD
+=======
+)
+
+
+create table historico_os_realizada(
+    cod_servico INT NOT NULL ,
+    obs_servico varchar(60),
+    cod_usuario int NOT NULL,
+    data_cadatrada DATETIME NOT NULL,
+    data_concluida DATETIME NOT NULL,
+
+    CONSTRAINT FOREIGN KEY (cod_servico) REFERENCES servico (cod_servico),
+    CONSTRAINT FOREIGN KEY (cod_usuario) REFERENCES usuario (cod_usuario)
+
+>>>>>>> b06bf52290ddb5e997437bc8124f54bc31b94ba3
 );
