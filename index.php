@@ -24,7 +24,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" style="margin-top: -25px;">
  <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -37,10 +37,9 @@
             include "View/components_adm/".$pages_adm.".php";
         }
 
-/*        
+        /*        
         foreach($pages_usr as $pages_usr)
           include "View/components_user/".$pages_usr.".php";
-        
         */
   
     ?>
