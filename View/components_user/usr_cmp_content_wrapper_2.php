@@ -195,9 +195,9 @@
           ?>
       <?php else: ?>
           <?php  
-            include("usr_cmp_conteudo_dashboard_2_1.php"); 
+            include("usr_cmp_conteudo_dashboard_2_1".".php"); 
           ?> 
-       <?php endif?>        
+       <?php endif;?>        
 
       <!-- End of Main Content -->
 

@@ -30,17 +30,17 @@
 
     <?php
         $pages_adm = ["cmp_sidebar_1","cmp_content_wrapper_2"];
-        //$pages_usr = ["usr_cmp_sidebar_1","usr_cmp_content_wrapper_2"];
+        $pages_usr = ["usr_cmp_sidebar_1","usr_cmp_content_wrapper_2"];
 
- 
+ /*
         foreach($pages_adm as $pages_adm){
             include "View/components_adm/".$pages_adm.".php";
         }
-
-        /*        
+*/
+              
         foreach($pages_usr as $pages_usr)
           include "View/components_user/".$pages_usr.".php";
-        */
+        
   
     ?>
 
@@ -50,18 +50,18 @@
     <!-- Ajustes Funcionais :  -->
     <?php
         $pages_adm = ["cmp_scrool_top_button_7","cmp_logout_modal_8" ];
-        //$pages_usr = ["usr_cmp_scrool_top_button_7","usr_cmp_logout_modal_8"];
+        $pages_usr = ["usr_cmp_scrool_top_button_7","usr_cmp_logout_modal_8"];
 
-
+/*
        foreach($pages_adm as $pages_adm){
             include "View/components_adm/".$pages_adm.".php";
         }
-
-        /*
+*/
+        
         foreach($pages_usr as $pages_usr)
            include "View/components_user/".$pages_usr.".php";
         
-        */
+      
 
     ?>
 
