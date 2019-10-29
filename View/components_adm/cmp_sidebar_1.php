@@ -38,7 +38,7 @@ l
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="buttons.html">Perfil</a>
+            <a class="collapse-item" href="index.php?ref=cmp_perfil">Perfil</a>
             <a class="collapse-item" href="cards.html">Cards</a>
           </div>
         </div>

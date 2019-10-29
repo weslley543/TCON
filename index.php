@@ -60,8 +60,6 @@
         
         foreach($pages_usr as $pages_usr)
            include "View/components_user/".$pages_usr.".php";
-        
-      
 
     ?>
 
