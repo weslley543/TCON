@@ -87,3 +87,38 @@ BEGIN
     DELETE FROM usuario
     WHERE usuario.cod_usuario = codigo_usuario
 END$$
+
+
+--Contador servicos solicitados
+
+DELIMITER $$
+CREATE PROCEDURE count_servicos(usuario int)
+BEGIN
+
+    SELECT COUNT(cod_usuario) as solicitados FROM servico
+    WHERE usuario = servico.cod_usuario;
+
+END $$
+
+
+
+-- Pedidos em atraso
+-- obs.: adcionar uma flag de conclusao;
+
+DELIMITER $$
+CREATE PROCEDURE servicos_atraso(id_usuario int)
+DECLARE @DataAtual DATETIME
+    SET @DataAtual = GETDATE()
+BEGIN
+    SELECT COUNT(cod_usuario) as atraso FROM servico
+    WHERE  @DataAtual < servico.data_cadatrada; 
+END $$
+
+-- Pedidos Concluidos: 
+
+DELIMITER $$
+CREATE PROCEDURE servicos_concluidos(id_usuario int)
+BEGIN
+    SELECT COUNT(cod_usuario) as concluidas FROM servico
+    WHERE  servico.data_concluida > servico.data_cadatrada and servico.cod_usuario = id_usuario; 
+END $$
