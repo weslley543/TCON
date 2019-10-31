@@ -13,7 +13,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.php?ref=cmp_conteudo_dashboard_2_1">
+        <a class="nav-link" href="dashboard.php?ref=cmp_conteudo_dashboard_2_1">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span> Área do Administrador </span></a>
       </li>
@@ -38,7 +38,7 @@ l
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="index.php?ref=cmp_perfil">Perfil</a>
+            <a class="collapse-item" href="dashboard.php?ref=cmp_perfil">Perfil</a>
             <a class="collapse-item" href="cards.html">Cards</a>
           </div>
         </div>
@@ -56,11 +56,11 @@ l
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Tipo:</h6>
-            <a class="collapse-item" href="index.php?ref=cmp_table_servicos_2_1">Segurança (Portaria)</a>
-            <a class="collapse-item" href="index.php?ref=cmp_table_servicos_2_1">Elétrica</a>
-            <a class="collapse-item" href="index.php?ref=cmp_table_servicos_2_1">Manutenção </a>
-            <a class="collapse-item" href="index.php?ref=cmp_table_servicos_2_1">Área de Lazer </a>
-            <a class="collapse-item" href="index.php?ref=cmp_table_servicos_2_1">Outros</a>
+            <a class="collapse-item" href="dashboard.php?ref=cmp_table_servicos_2_1">Segurança (Portaria)</a>
+            <a class="collapse-item" href="dashboard.php?ref=cmp_table_servicos_2_1">Elétrica</a>
+            <a class="collapse-item" href="dashboard.php?ref=cmp_table_servicos_2_1">Manutenção </a>
+            <a class="collapse-item" href="dashboard.php?ref=cmp_table_servicos_2_1">Área de Lazer </a>
+            <a class="collapse-item" href="dashboard.php?ref=cmp_table_servicos_2_1">Outros</a>
           </div>
         </div>
       </li>
