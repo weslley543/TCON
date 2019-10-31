@@ -1,9 +1,13 @@
 create database TCON;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 use TCON;
 >>>>>>> feature/dev
+=======
+use TCON;
+>>>>>>> dashboard
 create table usuario(
     cod_usuario INT PRIMARY KEY AUTO_INCREMENT,
     nome_usuario varchar(100) NOT NULL,
@@ -52,10 +56,14 @@ create table agendamento_area_lazer(
     PRIMARY KEY (cod_agendamento),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     CONSTRAINT FOREIGN KEY (cod_area_lazer) REFERENCES area_lazer (cod_area)
 =======
     CONSTRAINT FOREIGN KEY (cod_area_lazer) REFERENCES area_lazer (cod_area),
 >>>>>>> feature/dev
+=======
+    CONSTRAINT FOREIGN KEY (cod_area_lazer) REFERENCES area_lazer (cod_area),
+>>>>>>> dashboard
     CONSTRAINT FOREIGN KEY (cod_usuario) REFERENCES usuario(cod_usuario)
 );
 
@@ -63,6 +71,7 @@ create table agendamento_area_lazer(
 create table historico_exclusao(
     cod_admin int not null,
     cod_usuario int not null,
+<<<<<<< HEAD
 <<<<<<< HEAD
     data_exclusao DATE not null,
 )
@@ -73,22 +82,36 @@ create table historico_exclusao(
 
 
 >>>>>>> feature/dev
+=======
+    data_exclusao DATE not null
+);
+
+
+>>>>>>> dashboard
 create table historico_os_realizada(
     cod_servico INT NOT NULL ,
     obs_servico varchar(60),
     cod_usuario int NOT NULL,
     data_cadatrada DATETIME NOT NULL,
 <<<<<<< HEAD
+<<<<<<< HEAD
     data_concluida DATETIME NOT NULL
 =======
     data_concluida DATETIME NOT NULL,
 >>>>>>> feature/dev
+=======
+    data_concluida DATETIME NOT NULL,
+>>>>>>> dashboard
 
     CONSTRAINT FOREIGN KEY (cod_servico) REFERENCES servico (cod_servico),
     CONSTRAINT FOREIGN KEY (cod_usuario) REFERENCES usuario (cod_usuario)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 );
 =======
 );
 >>>>>>> feature/dev
+=======
+);
+>>>>>>> dashboard
