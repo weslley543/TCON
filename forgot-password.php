@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
 
@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>TCON - LOGIN</title>
+  <title>TCON - RECUPERAR SENHA</title>
 
   <!-- Custom fonts for this template-->
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -33,34 +33,27 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block "><img src="assets/img/condominio-sustentavel.jpg" width="500px" height="500px" alt=""></div>
+              <div class="col-lg-6 d-none d-lg-block bg-password-image"></div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Bem vindo</h1>
+                    <h1 class="h4 text-gray-900 mb-2">Você esqueceu a sua senha ?</h1>
+                    <p class="mb-4">Nós sabemos o quanto isso é chato, porém por aqui é possível recuperar a sua senha =)</p>
                   </div>
-                  <form class="user" action="Controllers/Usuario.php" method="POST">
+                  <form class="user" method="POST" action="Controllers/Usuario.php">
                     <div class="form-group">
-                      <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Coloque seu email...">
+                      <input type="email" class="form-control form-control-user" name="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Introduza o seu email...">
+                      <input type="hidden" name="op" value="recuperacao">
                     </div>
-                    <div class="form-group">
-                      <input type="password" name="senha" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha">
-                    </div>
-                    <input type="hidden" name="op" value="login">
-                    <div class="form-group">
-                    </div>
-                    <button class="btn btn-primary btn-user btn-block">Login</button>
-                    <span id="error"></span>
-                    <hr>
+                    <button class="btn btn-primary btn-user btn-block">Resetar a senha</button>
+                    
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.php">Esqueceu a sua senha ?</a>
-                  
+                    <a class="small" href="register.php">Crie uma conta !</a>
                   </div>
-                  
                   <div class="text-center">
-                    <a class="small" href="register.php">Registre-se!</a>
+                    <a class="small" href="index.php">Já possui conta? Faça login aqui!</a>
                   </div>
                 </div>
               </div>

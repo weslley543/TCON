@@ -14,15 +14,25 @@ class Usuario{
         $usuarioDAO = new UsuarioDAO();
         
         if($usuarioDAO->insertUsuario($dados)){
-            header('Location: ' . '../View/Pagina_parabens.html', true);
+            header('Location: ' . '../register.php', true);
             exit();
         }
     }
     public function login($dados){
         $usuarioDAO = new UsuarioDAO();
-        $dado = $usuarioDAO->loginUsuario($dados);    
-        header('Content-Type: application/json; charset=utf-8');
-        echo json_encode($dado,JSON_UNESCAPED_UNICODE);
+        if($usuarioDAO->loginUsuario($dados)){
+            session_start();
+            $_SESSION["email"]=$dados["email"];
+            $_SESSION["senha"]=$dados["senha"];
+            header('location: ../dashboard.php');
+        }else{
+            unset ($_SESSION['email']);
+            unset ($_SESSION['senha']);
+            
+            echo '<script>alert("Usuario ou senha incorretos tente novamente")</script>';	
+	        echo "<script>window.location = '../index.php';</script>"; 
+        }    
+        
          
     }
     public function recuperarSenha($dados){
@@ -71,6 +81,7 @@ switch ($_SERVER['REQUEST_METHOD']){
     case 'POST' && $_POST['op']=='cadastro': 
                     $usuario = new Usuario();
                     unset($_POST['op']);
+                    unset($_POST['senha2']);
                     $dados = $_POST;
                     $usuario->cadastrarUsuario($dados);
                     break;
