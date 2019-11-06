@@ -58,4 +58,16 @@ $con = $mysqli->query($consulta) or die ($mysqli->error);
 </div>
 
 </div>
+
+<script>
+  $('#botaenviar').on('click', function(){
+    $.ajax({
+      url:'Servicos.php?pegarServicos',
+      method:'GET',
+      succes:function(data){
+        
+      }
+    })
+  })
+</script>
 <!-- /.container-fluid -->
