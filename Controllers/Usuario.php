@@ -20,10 +20,11 @@ class Usuario{
     }
     public function login($dados){
         $usuarioDAO = new UsuarioDAO();
-        if($usuarioDAO->loginUsuario($dados)){
+        if($usuario = $usuarioDAO->loginUsuario($dados)){
             session_start();
             $_SESSION["email"]=$dados["email"];
             $_SESSION["senha"]=$dados["senha"];
+            $_SESSION["dados"] = $usuario;
             header('location: ../dashboard_adm.php');
         }else{
             unset ($_SESSION['email']);

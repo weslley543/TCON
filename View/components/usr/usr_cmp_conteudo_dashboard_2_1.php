@@ -1,5 +1,6 @@
               
         <!-- Begin Page  DashBoard Content -->
+        <input type="hidden" id="cod_usuario" value="<?= $cod_logado?>">
         <div class="container-fluid">
 
           <!-- Page Heading -->

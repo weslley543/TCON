@@ -33,10 +33,11 @@ class UsuarioDAO{
         str_replace($dados["email"],"'","''");
         $email = $dados["email"];
         $senha = $dados["senha"];
-        $query = "SELECT * FROM usuario WHERE email='$email' AND senha ='$senha'";
+        $query = "SELECT nome_usuario, cod_usuario, tipo_usuario FROM usuario WHERE email='$email' AND senha ='$senha'";
         $result = mysqli_query($link, $query);
         if($result->num_rows>0){
-            return true;
+            $usuario = $result->fetch_assoc();
+            return $usuario;
         }else{
             return false;
         }

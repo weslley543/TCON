@@ -1,5 +1,3 @@
-
-
 <?php
      session_start();
      if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true)){
@@ -9,13 +7,14 @@
      }
   
      $logado = $_SESSION['email'];
-     echo 'logou irmao';
-     include "View/components/DashboardHeader.php";
+     $cod_logado = $_SESSION['dados']['cod_usuario'];
+     $nome_usuario= $_SESSION['dados']['nome_usuario'];
+      include "View/components/DashboardHeader.php";
 
-     $pages_usr = ["usr_cmp_sidebar_1","usr_cmp_content_wrapper_2","usr_cmp_scrool_top_button_7","usr_cmp_logout_modal_8"];
+      $pages_usr = ["usr_cmp_sidebar_1","usr_cmp_content_wrapper_2","usr_cmp_scrool_top_button_7","usr_cmp_logout_modal_8"];
      
-     foreach($pages_usr as $pages_usr)
-          include "View/components/usr/".$pages_usr.".php";
+      foreach($pages_usr as $pages_usr)
+           include "View/components/usr/".$pages_usr.".php";
           
 ?>
 
