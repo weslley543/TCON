@@ -5,7 +5,8 @@ class Servicos {
     public function pegarServicos(){
         $servicos = new ServicosDAO();
         $servicosRetornados = $servicos->pegarServicos();
-        var_dump($servicosRetornados);
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($servicosRetornados,JSON_UNESCAPED_UNICODE);
 
     }
 }
