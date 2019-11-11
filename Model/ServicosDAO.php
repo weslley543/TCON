@@ -8,7 +8,7 @@ class ServicosDAO{
             echo "Problema interno do servidor";
             die();
         }
-        $result = mysqli_query($link,"CALL count_servicos(1); ") or die ($mysqli->error);
+        $result = mysqli_query($link,"CALL count_servicos(1); CALL  ") or die ($mysqli->error);
         $servicosSolicitados = $result->fetch_assoc();
         return $servicosSolicitados;
         mysqli_close();
