@@ -3,7 +3,8 @@ include('../Model/ServicosDAO.php');
 
 class Servicos {
     public function pegarServicos(){
-        $servicosRetornados = ServicosDAO()->pegarServicos();
+        $servicos = new ServicosDAO();
+        $servicosRetornados = $servicos->pegarServicos();
         var_dump($servicosRetornados);
 
     }
