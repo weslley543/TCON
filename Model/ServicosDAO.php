@@ -7,6 +7,6 @@ class ServicosDAO(){
             echo "Problema interno do servidor";
             die();
         }
-        mysqli_query();
+        $result = mysqli_query();
     }
 }
