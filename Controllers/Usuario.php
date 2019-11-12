@@ -25,7 +25,7 @@ class Usuario{
             $_SESSION["email"]=$dados["email"];
             $_SESSION["senha"]=$dados["senha"];
             $_SESSION["dados"] = $usuario;
-            header('location: ../dashboard_adm.php');
+            header('location: ../dashboard_usr.php');
         }else{
             unset ($_SESSION['email']);
             unset ($_SESSION['senha']);

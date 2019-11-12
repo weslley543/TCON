@@ -57,9 +57,9 @@ l
   <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Tipo:</h6>
-      <a class="collapse-item" href="dashboard.php?ref=usr_formulario"> Criar Ordem de Serviço </a>
-      <a class="collapse-item" href="dashboard.php?ref=usr_agendamentos"> Agendamentos </a>
-      <a class="collapse-item" href="dashboard.php?ref=usr_cmp_table_servicos_2_1"> Pedidos Realizados </a>
+      <a class="collapse-item" href="dashboard_usr.php?ref=usr_formulario"> Criar Ordem de Serviço </a>
+      <a class="collapse-item" href="dashboard_usr.php?ref=usr_agendamentos"> Agendamentos </a>
+      <a class="collapse-item" href="dashboard_usr.php?ref=usr_cmp_table_servicos_2_1"> Pedidos Realizados </a>
     </div>
   </div>
 </li>

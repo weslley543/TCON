@@ -48,4 +48,29 @@ class ServicosDAO{
         return $dados;
         
     }
+    public function inserirServico($dados){
+        $link = mysqli_connect("localhost", "root", "", "tcon");
+        if(!$link){
+            echo "Erro interno do servidor";
+            die();
+        }
+        $dados["data_cadatrada"] = date("Y/m/d H:m:s");
+        if(isset($dados["obs_servico"])){
+            $dados["obs_servico"] = "Sem obs";
+        }
+        foreach($dados as $coluna => $valor){
+            $cols[] = $coluna;
+            $vals[] =  $valor;
+        }
+        
+        $colnames = implode(", ", $cols);
+        $colvals = "'".implode("', '", $vals)."'";
+        $query = "INSERT INTO usuario ($colnames) values ($colvals)";
+        $result=mysqli_query($link, $query);
+        if(!$result){
+            return false;
+            die();
+        }
+        return true;
+    }
 }
