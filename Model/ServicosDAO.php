@@ -65,7 +65,7 @@ class ServicosDAO{
         
         $colnames = implode(", ", $cols);
         $colvals = "'".implode("', '", $vals)."'";
-        $query = "INSERT INTO usuario ($colnames) values ($colvals)";
+        $query = "INSERT INTO servico ($colnames) values ($colvals)";
         $result=mysqli_query($link, $query);
         if(!$result){
             return false;

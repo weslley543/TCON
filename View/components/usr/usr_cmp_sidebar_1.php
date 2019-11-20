@@ -3,7 +3,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php?ref=usr_cmp_conteudo_dashboard_2_1">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard_usr.php">
   <div class="sidebar-brand-icon rotate-n-15">
   </div>
   <div class="sidebar-brand-text mx-3">TCON - Usuário</div>
