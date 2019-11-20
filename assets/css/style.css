@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Orbitron:400,700);
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+  -webkit-font-smoothing: antialiased;
+  font: normal 16px arial,sans-serif;
+}
+.nav-item:hover{
+    border-radius:5px;
+    background-color: #ff0241; 
+    transition-duration: 500ms;
+}
+.container{
+    margin-top:10vh;
+}
