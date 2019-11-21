@@ -1,0 +1,31 @@
+
+
+
+.areaUse{
+    border: 2px solid;
+    border-color: brown;
+    margin-top: 50px;
+}
+
+.sidebar{
+    background-color: #343a40;
+    color: aliceblue;
+    height: 50rem;
+}
+
+
+a{
+    color: white;
+}
+
+li{
+
+}
+li:hover{
+    background-color: darkgrey;
+}
+
+
+.footer{
+    height: 120px;
+}

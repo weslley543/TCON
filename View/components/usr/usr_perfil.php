@@ -11,7 +11,7 @@
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800"> Perfil do Usuário</h1>
-<p class="mb-4"> Área destinada atualização de dados </p>
+<p class="mb-4"> Área destinada atualização de dados do usuário </p>
 
 <!-- DataTales Example -->
     <!-- Criar Formulario para insercao de dados e nova OS

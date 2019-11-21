@@ -40,7 +40,6 @@ l
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Menu:</h6>
       <a class="collapse-item" href="index.php?ref=usr_perfil">Perfil</a>
-      <a class="collapse-item" href="cards.html">Cards</a>
     </div>
   </div>
 </li>
@@ -64,14 +63,14 @@ l
   </div>
 </li>
 
-<!-- Divider -->
+<!-- Divider 
 <hr class="sidebar-divider">
-
-<!-- Heading -->
+-->
+<!-- Heading 
 <div class="sidebar-heading">
   Addons
 </div>
-
+-->
 
 <!-- Nav Item - Pages Collapse Menu 
 <li class="nav-item">
