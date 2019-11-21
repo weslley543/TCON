@@ -3,7 +3,7 @@
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800"> Solicitação de Agendamento </h1>
-<p class="mb-4"> Área destinada a agendamentos</p>
+<p class="mb-4"> Área destinada as reservas</p>
 
 <!-- DataTales Example -->
     <!-- Criar Formulario para insercao de dados e nova OS

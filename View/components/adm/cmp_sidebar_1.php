@@ -39,7 +39,6 @@ l
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu:</h6>
             <a class="collapse-item" href="dashboard.php?ref=cmp_perfil">Perfil</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
           </div>
         </div>
       </li>
