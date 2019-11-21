@@ -11,9 +11,9 @@
 <div class="card shadow mb-4">
   <div class="card-body">
     <form id="formAgendamento">
-
-     <input type="hidden" name="cod_usuario" value="<?= $cod_logado?>">
      <div class="form-group">
+      <input type="hidden" name="cod_usuario" value="<?= $cod_logado?>">
+      <input type="hidden" name="op" value="areaServico">
         <label for="exampleFormControlSelect1">Local para agendamento</label>
         <select class="form-control" name="cod_area_lazer">
           <option value="1">Salão I</option>
@@ -34,13 +34,23 @@
         <label for="exampleInputPassword1">Observação</label>
         <input type="input-group-text" class="form-control" name="observacao" placeholder="">
     </div>
-      <button type="submit" id="botaoEnviar" class="btn btn-primary">Enviar</button>
+      
     </form>
+    <button type="submit" id="botaoEnviar" class="btn btn-primary">Enviar</button>
   </div>
 </div>
 
 </div>
 <script>
-  $()
+  $('#botaoEnviar').on('click', function(){
+    $.ajax({
+      method:"POST",
+      url:'Servico.php'
+      data:$('formAgendamento').serialize(),
+      success:function(data){
+        console.log('adicionou')
+      }
+    })
+  });
 </script>
 <!-- /.container-fluid -->

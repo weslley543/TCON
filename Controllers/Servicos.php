@@ -17,9 +17,18 @@ class Servicos {
             echo "<script>alert('Ocorreu um problema ao inserir a solicitação');</script>";
         }
     }
+    public function agendarArea($dados){
+        $servicos = new ServicosDAO();
+        if($retorno = $servicos->agendarArea($dados)){
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode($retorno,JSON_UNESCAPED_UNICODE);
+        }else{
+            echo "<script>alert('Ocorreu um problema ao inserir a solicitação');</script>";
+        }
+    }
 }
 
-    switch ($_SERVER['REQUEST_METHOD']){
+    switch (!isset($_SERVER['REQUEST_METHOD'])){
         case "GET" && $_GET["op"] == "pegarServicos": 
             $servico = new Servicos();
             $servico->pegarServicos(intval($_GET["cod_usuario"]));
@@ -29,5 +38,10 @@ class Servicos {
             $servico = new Servicos();
             unset($_POST["op"]);
             $servico->inserirServico($_POST);
+        break;
+        case "POST" && $_POST["op"] == "areaServico":
+            $servico = new Servicos();
+            unset($_POST["op"]);
+            $servico->agendarArea($_POST);
         break;
     }
