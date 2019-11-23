@@ -149,7 +149,7 @@
               
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary"> Gráfico de Serviços </h6>
+                  <h6 class="m-0 font-weight-bold text-primary"> Liberação de Entrada </h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -165,65 +165,76 @@
                 </div>
                 
                 <!-- Card Body -->
-                <div class="card-body">
-                  <div class="chart-pie pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
-                  </div>
-                  <div class="mt-4 text-center small">
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-primary"></i> Direct
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Social
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-info"></i> Referral
-                    </span>
-                  </div>
-                </div>
+                <div class="card-body" >
+                        <div class="row align-items-center justify-content  border border rounded-sm" style='margin-bottom: 10px;'> 
+                          <div class="col"> Nome </div>
+                          <div class="col"> CPF </div>
+                          <div class="col"> Liberado Por. </div>         
+                        </div>
+                 
+                      <!--  Inserir Liberacoes aqui  -->
+                    <?php $cont=0; while($cont < 3 ){; ?>
+                        <div class="row align-items-center justify-content  border border-success rounded-sm" style='margin-bottom: 3px;'> 
+                          <div class="col"> Caroline A. </div>
+                          <div class="col"> xx.xx.xx </div>
+                          <div class="col"> Gustavo S. </div>         
+                        </div>
+                    <?php  $cont = $cont + 1; } ?>  
+                    
+                 
+                </div> 
+                <!-- End Card body -->
+
               </div>
+
             </div>
           </div>
 
           <!-- Content Row -->
           <div class="row">
-
             <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
-
+            <div class="col-lg-12 mb-6">
               <!-- Project Card Example -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Ordem de Serviço - Solicitadas </h6>
                 </div>
-                <div class="card-body">
-                  <h4 class="small font-weight-bold">Server Migration <span class="float-right">20%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Sales Tracking <span class="float-right">40%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Customer Database <span class="float-right">60%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Payout Details <span class="float-right">80%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">Account Setup <span class="float-right">Complete!</span></h4>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+
+                  <div style="overflow-y:scroll;">        
+                  <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                      <thead>
+                        <tr>
+                          <th>Tipo de Servico</th>
+                          <th>Observacao</th>
+                          <th>Usuario Solicitante</th>
+                          <th>Data Cadastrada</th>
+                          <th>Concluida</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <?php $cont = 0; while($cont <= 6){ ?>
+                            <tr>
+                              <td><?php echo 'Elétrica'; ?></td>
+                              <td><?php echo 'Lampada Queimada - setor 4'; ?></td>
+                              <td><?php echo 'Gustavo Serpeloni'; ?></td>
+                              <td><?php echo '29-10-2019'; ?></td>
+                              <td><?php echo '11-11-2019'; ?></td>
+                            </tr>
+                          <?php $cont = $cont + 1; };?>
+                      </tbody>
+                     </table>
+                    </div>
                   </div>
                 </div>
-              </div>
-             </div> 
+                  </div>
 
-            <!-- Ilustrations  -->
+               </div>
+          </div> 
 
-            <div class="col-lg-6 mb-4">
+            <!-- Ilustrations  
+
+            <div class="col-lg-2 mb-2">
               <div class="card shadow mb-2">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
@@ -237,5 +248,7 @@
                 </div>
               </div>
             </div>
+
+            -->
 
         </div> <!-- /.container-fluid -->
