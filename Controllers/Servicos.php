@@ -1,6 +1,7 @@
 <?php
 include('../Model/ServicosDAO.php');
 class Servicos {
+
     public function pegarServicos($cod_usuario){
           $servicos = new ServicosDAO();
           $servicosRetornados = $servicos->pegarServicos($cod_usuario);
@@ -8,6 +9,7 @@ class Servicos {
           echo json_encode($servicosRetornados,JSON_UNESCAPED_UNICODE);
         
     }
+    
     public function inserirServico($dados){
         $servicos = new ServicosDAO();
         if($servicos->inserirServico($dados)){

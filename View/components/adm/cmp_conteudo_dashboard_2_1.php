@@ -97,7 +97,7 @@
               <div class="card shadow mb-4">
 
                <!-- Card Header - Dropdown -->
-               <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+               <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between border border-primary">
                   <h6 class="m-0 font-weight-bold text-primary">Área de Reservas </h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -148,8 +148,8 @@
               <div class="card shadow mb-4">
               
                 <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary"> Liberação de Entrada </h6>
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between border border-success">
+                  <h6 class="m-0 font-weight-bold text-success"> Liberação de Entrada </h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -164,9 +164,9 @@
                   </div>
                 </div>
                 
-                <!-- Card Body -->
-                <div class="card-body" >
-                        <div class="row align-items-center justify-content  border border rounded-sm" style='margin-bottom: 10px;'> 
+                <!-- Card Body Ajustar tamanho normal do card-body -->
+                <div class="card-body" style='min-height: 360px;'>
+                        <div class="row align-items-center justify-content " style='margin-bottom: 10px; margin-top: -15px;'> 
                           <div class="col"> Nome </div>
                           <div class="col"> CPF </div>
                           <div class="col"> Liberado Por. </div>         
@@ -174,14 +174,13 @@
                  
                       <!--  Inserir Liberacoes aqui  -->
                     <?php $cont=0; while($cont < 3 ){; ?>
-                        <div class="row align-items-center justify-content  border border-success rounded-sm" style='margin-bottom: 3px;'> 
+                        <div class="row align-items-center justify-content  border border rounded-sm" style='margin-bottom: 3px;'> 
                           <div class="col"> Caroline A. </div>
                           <div class="col"> xx.xx.xx </div>
                           <div class="col"> Gustavo S. </div>         
                         </div>
                     <?php  $cont = $cont + 1; } ?>  
-                    
-                 
+                  
                 </div> 
                 <!-- End Card body -->
 
@@ -196,8 +195,8 @@
             <div class="col-lg-12 mb-6">
               <!-- Project Card Example -->
               <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Ordem de Serviço - Solicitadas </h6>
+                <div class="card-header py-3 border border-warning">
+                  <h6 class="m-0 font-weight-bold text-warning">Ordem de Serviço - Solicitadas </h6>
                 </div>
 
                   <div style="overflow-y:scroll;">        

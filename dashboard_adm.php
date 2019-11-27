@@ -19,7 +19,6 @@
 ?>
 
 
-
 <?php
  include "View/components/DashboardFooter.php"; 
 ?>

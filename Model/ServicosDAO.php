@@ -48,6 +48,8 @@ class ServicosDAO{
         return $dados;
         
     }
+
+    
     public function inserirServico($dados){
         $link = mysqli_connect("localhost", "root", "", "tcon");
         if(!$link){
