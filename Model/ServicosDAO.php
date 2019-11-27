@@ -103,4 +103,28 @@ class ServicosDAO{
         return true;
         
     }
+
+    public function servicoSolicitados(){
+        
+        $link = mysqli_connect("localhost", "root", "", "tcon");
+        if(!$link){
+            echo "Erro interno do servidor";
+            die();
+        }
+
+        $query = "SELECT * FROM servico";
+        $result = mysqli_query($link,$query);
+
+        while($row = $result->fetch_assoc()){
+            $resultSet[] = $row;
+        }
+        $dados = json_encode($resultSet, JSON_UNESCAPED_UNICODE);
+        mysqli_close($link);
+        return $dados;
+    
+
+        //return $servicosSolicitados;
+
+   }//end servicoSolicitados
+
 }

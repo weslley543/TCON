@@ -29,6 +29,18 @@ class Servicos {
             echo json_encode($retorno,JSON_UNESCAPED_UNICODE);
         }
     }
+
+    public function getServicos(){
+        $servicos = new ServicosDAO();
+        $dados = $servicos->servicoSolicitados();
+        header("Content-Type: application/json; charset=utf-8");
+        echo ($dados);
+
+
+    }
+
+
+
 }
 
 
@@ -36,6 +48,12 @@ class Servicos {
         case "GET" && array_key_exists("op",$_GET) && $_GET["op"] == "pegarServicos": 
             $servico = new Servicos();
             $servico->pegarServicos(intval($_GET["cod_usuario"]));
+        break;
+        
+        case "GET" && array_key_exists("op",$_GET) && $_GET["op"] == "servicoSolicitado":
+            $servico = new Servicos();
+            unset($_GET["op"]);
+            $servico->getServicos();
         break;
         
         case "POST" && array_key_exists("op",$_POST) && $_POST["op"] == "cadastrarSevico":
@@ -48,4 +66,5 @@ class Servicos {
             unset($_POST["op"]);
             $servico->agendarArea($_POST);
         break;
+
     }
