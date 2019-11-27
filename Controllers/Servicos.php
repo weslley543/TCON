@@ -19,17 +19,33 @@ class Servicos {
             echo "<script>alert('Ocorreu um problema ao inserir a solicitação');</script>";
         }
     }
+    public function agendarArea($dados){
+        $servicos = new ServicosDAO();
+        if($retorno = $servicos->agendarArea($dados)){
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode($retorno,JSON_UNESCAPED_UNICODE);
+        }else{
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode($retorno,JSON_UNESCAPED_UNICODE);
+        }
+    }
 }
 
+
     switch ($_SERVER['REQUEST_METHOD']){
-        case "GET" && $_GET["op"] == "pegarServicos": 
+        case "GET" && array_key_exists("op",$_GET) && $_GET["op"] == "pegarServicos": 
             $servico = new Servicos();
             $servico->pegarServicos(intval($_GET["cod_usuario"]));
         break;
         
-        case "POST" && $_POST["op"] == "cadastrarSevico":
+        case "POST" && array_key_exists("op",$_POST) && $_POST["op"] == "cadastrarSevico":
             $servico = new Servicos();
             unset($_POST["op"]);
             $servico->inserirServico($_POST);
+        break;
+        case "POST" &&  array_key_exists("op",$_POST) && $_POST["op"] == "areaLazer":
+            $servico = new Servicos();
+            unset($_POST["op"]);
+            $servico->agendarArea($_POST);
         break;
     }

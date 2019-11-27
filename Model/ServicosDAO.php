@@ -75,4 +75,32 @@ class ServicosDAO{
         }
         return true;
     }
+
+    public function agendarArea($dados){
+        $link = mysqli_connect("localhost", "root", "", "tcon");
+        if(!$link){
+            echo "Erro interno do servidor";
+            die();
+        }
+        $dados["data_agendou"] = date("Y/m/d H:m:s");
+        if(isset($dados["observacao"])){
+            $dados["observacao"] = "Sem obs";
+        }
+        foreach($dados as $coluna => $valor){
+            $cols[] = $coluna;
+            $vals[] =  $valor;
+        }
+        
+        $colnames = implode(", ", $cols);
+        $colvals = "'".implode("', '", $vals)."'";
+        $query = "INSERT INTO agendamento_area_lazer ($colnames) values ($colvals)";
+        //echo $query;
+        $result=mysqli_query($link, $query);
+        if(!$result){
+            return false;
+            die();
+        }
+        return true;
+        
+    }
 }
