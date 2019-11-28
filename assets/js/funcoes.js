@@ -1,3 +1,5 @@
+
+// Retornar todos serviços -- criar procedure no bacno de dados
 $(document).ready(function(){
     $.ajax({
         method:"GET",
@@ -15,3 +17,5 @@ $(document).ready(function(){
 
     });
 });
+
+

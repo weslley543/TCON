@@ -113,7 +113,7 @@
                   </div>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">
+                <div class="card-body" id="tabelaAgendamento">
                   <div class="chart-area">
                   <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -125,15 +125,7 @@
                           <th>Data de Entrega</th>
                         </tr>
                       </thead>
-                      <tbody>
-                          <?php $cont = 0; while($cont <= 4){ ?>
-                            <tr>
-                              <td><?php echo 'Salão de Festas'; ?></td>
-                              <td><?php echo 'Gustavo Serpeloni'; ?></td>
-                              <td><?php echo '29-11-2019'; ?></td>
-                              <td><?php echo '01-12-2019'; ?></td>
-                            </tr>
-                          <?php $cont = $cont + 1; };?>
+                      <tbody id="corpoAgendamento">
                       </tbody>
                      </table>
                     </div>
@@ -251,3 +243,4 @@
             -->
 
         </div> <!-- /.container-fluid -->
+

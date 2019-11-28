@@ -39,6 +39,13 @@ class Servicos {
 
     }
 
+    public function getAgendamentos(){
+        $servicos = new ServicosDAO();
+        $dados = $servicos->agendamentos();
+        header('Content-Type: application/json; charset=utf-8');
+        echo($dados);
+    }
+
 
 
 }
@@ -56,11 +63,19 @@ class Servicos {
             $servico->getServicos();
         break;
         
+        case "GET" && array_key_exists("op",$_GET) && $_GET["op"] == "agendametos":
+            console.log("entrou em serviços.php");
+            $servico = new Servicos();
+            unset($_GET["op"]);
+            $servico->getAgendamentos();
+        break;
+
         case "POST" && array_key_exists("op",$_POST) && $_POST["op"] == "cadastrarSevico":
             $servico = new Servicos();
             unset($_POST["op"]);
             $servico->inserirServico($_POST);
         break;
+
         case "POST" &&  array_key_exists("op",$_POST) && $_POST["op"] == "areaLazer":
             $servico = new Servicos();
             unset($_POST["op"]);
