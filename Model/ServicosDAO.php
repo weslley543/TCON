@@ -135,16 +135,16 @@ class ServicosDAO{
        }
 
        $query = "SELECT * FROM agendamento_area_lazer";
-       $result = msqli_query($link,$query);
+       $result = mysqli_query($link,$query);
        while($row = $result->fetch_assoc()){
            $resultSet[] = $row;
        }
 
-       $dados = json_enconde($resultSet, JSON_UNESCAPED_UNICODE);
-      
+       $dados = json_encode($resultSet, JSON_UNESCAPED_UNICODE);
+       
        mysqli_close($link);
 
-       //return $dados;
+       return $dados;
 
    }//end agendamentos
 

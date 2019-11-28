@@ -50,7 +50,7 @@ class Servicos {
 
 }
 
-
+    
     switch ($_SERVER['REQUEST_METHOD']){
         case "GET" && array_key_exists("op",$_GET) && $_GET["op"] == "pegarServicos": 
             $servico = new Servicos();
@@ -63,8 +63,7 @@ class Servicos {
             $servico->getServicos();
         break;
         
-        case "GET" && array_key_exists("op",$_GET) && $_GET["op"] == "agendametos":
-            console.log("entrou em serviços.php");
+        case "GET" && array_key_exists("op",$_GET) && $_GET["op"] == "agendamentos":
             $servico = new Servicos();
             unset($_GET["op"]);
             $servico->getAgendamentos();

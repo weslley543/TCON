@@ -1,13 +1,12 @@
 //JS para agendamentos:
 $("#tabelaAgendamento").ready(function(){
-   console.log("Oi - FuncoesServico.js !");
     $.ajax({
         url: "Controllers/Servicos.php",
         method: "GET",
         data: "op=agendamentos",
         dataType: "json",        
         success: function(response){
-            console.log("sucesso!");
+            console.log(response);
              $('#corpoAgendamento').html("Gustavo Serpeloni");
         }
 
