@@ -46,6 +46,12 @@ class Servicos {
         echo($dados);
     }
 
+    public function getLiberacoes(){
+        $servicos = new ServicosDAO();
+        $dados = $servicos->liberacoes();
+        header('Content-Type: application/json; charset=utf-8');
+        echo($dados);
+    }
 
 
 }
@@ -67,6 +73,12 @@ class Servicos {
             $servico = new Servicos();
             unset($_GET["op"]);
             $servico->getAgendamentos();
+        break;
+
+        case "GET" && array_key_exists("op", $_GET) && $_GET["op"] == 'liberacao':
+            $servico = new Servicos();
+            unset($_GET['op']);
+            $servico->getLiberacoes();
         break;
 
         case "POST" && array_key_exists("op",$_POST) && $_POST["op"] == "cadastrarSevico":
