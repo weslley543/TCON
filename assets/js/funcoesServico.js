@@ -22,6 +22,7 @@ $("#tabelaAgendamento").ready(function(){
 });
 
 
+// Tabela Servicos Realizados:
 $("#tabelaServicos").ready(function(){
     $.ajax({
         url: "Controllers/Servicos.php",
@@ -45,6 +46,9 @@ $("#tabelaServicos").ready(function(){
 });
 
 
+
+// Tabela liberacao de pessoas :
+
 $('#tabelaLiberacao').ready(function(){
     $.ajax({
         url: "Controllers/Servicos.php",
@@ -65,14 +69,29 @@ $('#tabelaLiberacao').ready(function(){
     });
 });
 
-$().ready(function(){
+
+//Tabela de Usuarios Cadastrados: 
+$("tabelaUsuarios").ready(function(){
+
     $.ajax({
         url: "Controllers/Servicos.php",
         method: "GET",
-        data: "op=servicos"
+        data: 'op=getusuarios',
+        dataType: 'json',
 
+        success:function(response){
+            let html = '';
+            for(let i=0; i < response.length; i++){
+                html+="<tr><td>"+response[i].nome_usuario+"</td>";
+                html+="<td>"+response[i].endereco_usuario+"</td>";
+                html+="<td>"+response[i].casa_usuario+"</td>";
+                html+="<td>"+response[i].email+"</td>";
+                html+="<td>"+response[i].telefone_usuario+"</td>";
+                html+="<td>"+response[i].celular_usuario+"</td>";
+                html+="</tr>";
+           }
 
-
-
+             $("#corpoTableUsuario").html(html);              
+        }
     });
-});
+}); //end usuarios cadastrados
