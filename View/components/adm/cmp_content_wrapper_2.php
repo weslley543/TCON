@@ -174,7 +174,7 @@
         <!-- End of Topbar -->
 
 
-      <!-- Inicio Conteudo da Dashboard  -->
+      <!-- Inicio Conteudo da Dashboard  "Local onde é realizado as chamadas que chegam pelo GET"-->
        <?php if(isset($_GET['ref'])): ?>
           <?php 
             include($_GET['ref'].".php"); 
