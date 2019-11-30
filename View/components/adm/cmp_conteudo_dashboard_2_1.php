@@ -113,7 +113,7 @@
                   </div>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">
+                <div class="card-body" id="tabelaAgendamento">
                   <div class="chart-area">
                   <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -125,15 +125,7 @@
                           <th>Data de Entrega</th>
                         </tr>
                       </thead>
-                      <tbody>
-                          <?php $cont = 0; while($cont <= 4){ ?>
-                            <tr>
-                              <td><?php echo 'Salão de Festas'; ?></td>
-                              <td><?php echo 'Gustavo Serpeloni'; ?></td>
-                              <td><?php echo '29-11-2019'; ?></td>
-                              <td><?php echo '01-12-2019'; ?></td>
-                            </tr>
-                          <?php $cont = $cont + 1; };?>
+                      <tbody id="corpoAgendamento">
                       </tbody>
                      </table>
                     </div>
@@ -144,7 +136,7 @@
 
             <!-- Pie Chart -->
 
-            <div class="col-xl-4 col-lg-5">
+            <div class="col-xl-4 col-lg-5" id="tabelaLiberacao">
               <div class="card shadow mb-4">
               
                 <!-- Card Header - Dropdown -->
@@ -171,16 +163,11 @@
                           <div class="col"> CPF </div>
                           <div class="col"> Liberado Por. </div>         
                         </div>
-                 
-                      <!--  Inserir Liberacoes aqui  -->
-                    <?php $cont=0; while($cont < 3 ){; ?>
-                        <div class="row align-items-center justify-content  border border rounded-sm" style='margin-bottom: 3px;'> 
-                          <div class="col"> Caroline A. </div>
-                          <div class="col"> xx.xx.xx </div>
-                          <div class="col"> Gustavo S. </div>         
-                        </div>
-                    <?php  $cont = $cont + 1; } ?>  
-                  
+                 <div id='conteudoLiberacao'>
+
+                 </div>   
+
+
                 </div> 
                 <!-- End Card body -->
 
@@ -251,3 +238,4 @@
             -->
 
         </div> <!-- /.container-fluid -->
+

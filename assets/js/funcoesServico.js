@@ -1,3 +1,18 @@
+//JS para agendamentos:
+$("#tabelaAgendamento").ready(function(){
+    $.ajax({
+        url: "Controllers/Servicos.php",
+        method: "GET",
+        data: "op=agendamentos",
+        dataType: "json",        
+        success: function(response){
+             $('#corpoAgendamento').html("Gustavo Serpeloni");
+        }
+
+    });
+});
+
+
 $("#tabelaServicos").ready(function(){
     $.ajax({
         url: "Controllers/Servicos.php",
@@ -5,7 +20,6 @@ $("#tabelaServicos").ready(function(){
         data: "op=servicoSolicitado",
         dataType: "json",
         success: function(response){
-            console.log(response);
             let html = '';
             for(let i= 0 ;i <response.length; i++){
                 html+="<tr><td>"+response[i].cod_servico+"</td>";
@@ -18,5 +32,6 @@ $("#tabelaServicos").ready(function(){
             }
             $('#corpoTabela').html(html);
         }
-    })
-})
+    });
+});
+

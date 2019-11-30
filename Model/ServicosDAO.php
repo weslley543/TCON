@@ -127,4 +127,68 @@ class ServicosDAO{
 
    }//end servicoSolicitados
 
+   public function agendamentos(){
+       $link = mysqli_connect("localhost", "root", "", "tcon");
+       if(!$link){
+           echo "Erro interno do servidor";
+           die();
+       }
+
+       $query = "CALL areas_reservadas()";
+       $result = mysqli_query($link,$query);
+       
+       while($row = $result->fetch_assoc()){
+           $resultSet[] = $row;
+       }
+
+       $dados = json_encode($resultSet, JSON_UNESCAPED_UNICODE);
+       mysqli_close($link);
+       
+       return $dados;
+
+   }//end agendamentos
+
+   public function liberacoes(){
+    $link = mysqli_connect("localhost", "root", "", "tcon");
+    if(!$link){
+            echo "Erro interno do servidor";
+            die();
+    }
+
+    $query = "CALL liberacaoHoje()";
+    $result = mysqli_query($link,$query);
+    
+    while($row = $result->fetch_assoc()){
+        $resultSet[] = $row;
+    }
+
+    $dados = json_encode($resultSet, JSON_UNESCAPED_UNICODE);
+    mysqli_close($link);
+
+    return $dados;
+   }//end liberacoes
+
+
+   public function usuariosCadastrados(){
+        
+        $link = mysqli_connect("localhost", "root", "","tcon");
+
+        if(!$link){
+            echo 'Erro interno do servidor';
+            die();
+        }
+
+        $query = "CALL usuariosCadastrados()";
+        $result = mysqli_query($link, $query);
+
+        while($row = $result->fetch_assoc()){
+            $resultSet[] = $row;
+        }
+
+        $dados = json_encode($resultSet, JSON_UNESCAPED_UNICODE);
+        mysqli_close($link);
+        return $dados;
+   }//end usuarios Cadastrados
+
+
 }

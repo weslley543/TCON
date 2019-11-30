@@ -39,11 +39,31 @@ class Servicos {
 
     }
 
+    public function getAgendamentos(){
+        $servicos = new ServicosDAO();
+        $dados = $servicos->agendamentos();
+        header('Content-Type: application/json; charset=utf-8');
+        echo($dados);
+    }
+
+    public function getLiberacoes(){
+        $servicos = new ServicosDAO();
+        $dados = $servicos->liberacoes();
+        header('Content-Type: application/json; charset=utf-8');
+        echo($dados);
+    }
+
+    public function getUsuarios(){
+        $servicos = new ServicosDAO();
+        $dados = $servicos->usuariosCadastrados();
+        header('Content-Type: application/json; charset=utf-8');
+        echo($dados);
+    }
 
 
 }
 
-
+    
     switch ($_SERVER['REQUEST_METHOD']){
         case "GET" && array_key_exists("op",$_GET) && $_GET["op"] == "pegarServicos": 
             $servico = new Servicos();
@@ -56,11 +76,30 @@ class Servicos {
             $servico->getServicos();
         break;
         
+        case "GET" && array_key_exists("op",$_GET) && $_GET["op"] == "agendamentos":
+            $servico = new Servicos();
+            unset($_GET["op"]);
+            $servico->getAgendamentos();
+        break;
+
+        case "GET" && array_key_exists("op", $_GET) && $_GET["op"] == 'liberacao':
+            $servico = new Servicos();
+            unset($_GET['op']);
+            $servico->getLiberacoes();
+        break;
+
+        case "GET" && array_key_exists("op", $_GET) && $_GET["op"] == 'getusuarios':
+            $servico = new Servicos();
+            unset($_GET['op']);
+            $servico->getUsuarios();
+        break;
+
         case "POST" && array_key_exists("op",$_POST) && $_POST["op"] == "cadastrarSevico":
             $servico = new Servicos();
             unset($_POST["op"]);
             $servico->inserirServico($_POST);
         break;
+
         case "POST" &&  array_key_exists("op",$_POST) && $_POST["op"] == "areaLazer":
             $servico = new Servicos();
             unset($_POST["op"]);

@@ -26,7 +26,7 @@
 
   <!-- Scripts - criados BD2 -->
 
-  <script src="assets/js/js_user.js"></script>
+  <!-- <script src="assets/js/js_user.js"></script> -->
   <script src="assets/js/funcoes.js"></script>
   <script src="assets/js/funcoesServico.js"></script>
 

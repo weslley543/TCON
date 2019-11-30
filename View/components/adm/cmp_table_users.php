@@ -5,7 +5,7 @@
 <p class="mb-4">Lista de usuários adicionados no sistema</p>
 
 <!-- DataTales Example -->
-<div class="card shadow mb-4">
+<div class="card shadow mb-4" id='tabelaUsuarios'>
   <div class="card-header py-3 ">
     <h6 class="m-0 font-weight-bold text-primary">Base de Dados</h6>
   </div>
@@ -22,17 +22,7 @@
             <th>Celular</th>
           </tr>
         </thead>
-        <tbody>
-        <?php $cont = 0; while($cont <= 4){ ?>
-          <tr>
-            <td><?php echo 'Gustavo Serpeloni'; ?></td>
-            <td><?php echo 'Rua dois'; ?></td>
-            <td><?php echo '5'; ?></td>
-            <td><?php echo 'g@hotmail.com'; ?></td>
-            <td><?php echo '4185-2656'; ?></td>
-            <td><?php echo '98023-9102'; ?></td>
-          </tr>
-        <?php $cont = $cont + 1; };?>
+        <tbody id="corpoTableUsuario">
         </tbody>
       </table>
     </div>
