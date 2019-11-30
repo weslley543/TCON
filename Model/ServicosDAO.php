@@ -121,10 +121,6 @@ class ServicosDAO{
         $dados = json_encode($resultSet, JSON_UNESCAPED_UNICODE);
         mysqli_close($link);
         return $dados;
-    
-
-        //return $servicosSolicitados;
-
    }//end servicoSolicitados
 
    public function agendamentos(){

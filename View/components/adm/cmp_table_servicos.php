@@ -14,12 +14,12 @@
       <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Nome Usuário</th>
-            <th>Endereço</th>
-            <th>N° Casa</th>
-            <th>Email</th>
-            <th>Telefone</th>
-            <th>Celular</th>
+            <th>Codigo Serviço</th>
+            <th>Tipo Serviço</th>
+            <th>Descrição</th>
+            <th>Usuario Solicitante</th>
+            <th>Data-Cadastrada</th>
+            <th>Data-Concluída</th>
           </tr>
         </thead>
         <tbody id='corpoTabela'>

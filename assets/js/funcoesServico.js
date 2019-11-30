@@ -31,7 +31,7 @@ $("#tabelaServicos").ready(function(){
         dataType: "json",
         success: function(response){
             let html = '';
-            for(let i= 0 ;i <response.length; i++){
+            for(let i= 0 ;i < response.length; i++){
                 html+="<tr><td>"+response[i].cod_servico+"</td>";
                 html+="<td>"+response[i].cod_servico_tipo+"</td>";
                 html+="<td>"+response[i].obs_servico+"</td>";
@@ -95,3 +95,26 @@ $("tabelaUsuarios").ready(function(){
         }
     });
 }); //end usuarios cadastrados
+
+
+// Tabela Servicos Realizados -- verificar quantidade de dados tabela
+$("#tabelaServicos2").ready(function(){
+    $.ajax({
+        url: "Controllers/Servicos.php",
+        method: "GET",
+        data: "op=servicoSolicitado",
+        dataType: "json",
+        success: function(response){
+            let html = '';
+            for(let i= 0 ;i < response.length; i++){
+                html+="<td>"+response[i].cod_servico_tipo+"</td>";
+                html+="<td>"+response[i].cod_usuario+"</td>";
+                html+="<td>"+response[i].obs_servico+"</td>";
+                html+="<td>"+response[i].data_cadatrada+"</td>";
+                html+="<td>"+response[i].data_concluida+"</td>";
+                html+="</tr>";
+            }
+            $('#corpoServicosAdm').html(html);
+        }
+    });
+});

@@ -179,7 +179,7 @@
           <!-- Content Row -->
           <div class="row">
             <!-- Content Column -->
-            <div class="col-lg-12 mb-6">
+            <div class="col-lg-12 mb-6" id="tabelaServicos2">
               <!-- Project Card Example -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3 border border-warning">
@@ -198,16 +198,8 @@
                           <th>Concluida</th>
                         </tr>
                       </thead>
-                      <tbody>
-                          <?php $cont = 0; while($cont <= 6){ ?>
-                            <tr>
-                              <td><?php echo 'Elétrica'; ?></td>
-                              <td><?php echo 'Lampada Queimada - setor 4'; ?></td>
-                              <td><?php echo 'Gustavo Serpeloni'; ?></td>
-                              <td><?php echo '29-10-2019'; ?></td>
-                              <td><?php echo '11-11-2019'; ?></td>
-                            </tr>
-                          <?php $cont = $cont + 1; };?>
+                      <tbody id="corpoServicosAdm">
+                      
                       </tbody>
                      </table>
                     </div>
@@ -218,24 +210,6 @@
                </div>
           </div> 
 
-            <!-- Ilustrations  
-
-            <div class="col-lg-2 mb-2">
-              <div class="card shadow mb-2">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
-                </div>
-                <div class="card-body">
-                  <div class="text-center">
-                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="View/img/undraw_posting_photo.svg" alt="">
-                  </div>
-                  <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a constantly updated collection of beautiful svg images that you can use completely free and without attribution!</p>
-                  <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on unDraw &rarr;</a>
-                </div>
-              </div>
-            </div>
-
-            -->
-
+ 
         </div> <!-- /.container-fluid -->
 
