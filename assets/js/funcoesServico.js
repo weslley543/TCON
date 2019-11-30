@@ -17,9 +17,6 @@ $("#tabelaServicos").ready(function(){
                 html+="</tr>";
             }
             $('#corpoTabela').html(html);
-
-
-
         }
     })
 })
