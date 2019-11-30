@@ -6,7 +6,15 @@ $("#tabelaAgendamento").ready(function(){
         data: "op=agendamentos",
         dataType: "json",        
         success: function(response){
-             $('#corpoAgendamento').html("Gustavo Serpeloni");
+            let html = '';
+            for(let i= 0 ;i < response.length; i++){
+                html+="<tr><td>"+response[i].cod_area_lazer+"</td>";
+                html+="<td>"+response[i].nome_usuario+"</td>";
+                html+="<td>"+response[i].data_agendou+"</td>";
+                html+="<td>"+response[i].data_entrega+"</td>";
+                html+="</tr>";
+            }
+            $('#corpoAgendamento').html(html);
         }
 
     });
