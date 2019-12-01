@@ -115,7 +115,7 @@
                 <!-- Card Body -->
                 <div class="card-body" id="tabelaAgendamento">
                   <div class="chart-area">
-                  <div class="table-responsive">
+                  <div class="table-responsive table-hover">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
@@ -157,13 +157,13 @@
                 </div>
                 
                 <!-- Card Body Ajustar tamanho normal do card-body -->
-                <div class="card-body" style='min-height: 360px;'>
+                <div class="card-body" style='min-height: 360px; '>
                         <div class="row align-items-center justify-content " style='margin-bottom: 10px; margin-top: -15px;'> 
                           <div class="col"> Nome </div>
                           <div class="col"> CPF </div>
                           <div class="col"> Liberado Por. </div>         
                         </div>
-                 <div id='conteudoLiberacao'>
+                 <div id="conteudoLiberacao">
 
                  </div>   
 
@@ -186,9 +186,9 @@
                   <h6 class="m-0 font-weight-bold text-warning">Ordem de Serviço - Solicitadas </h6>
                 </div>
 
-                  <div style="overflow-y:scroll;">        
-                  <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <div>        
+                  <div class="table-responsive table-hover">
+                    <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
                           <th>Tipo de Servico</th>
@@ -199,7 +199,6 @@
                         </tr>
                       </thead>
                       <tbody id="corpoServicosAdm">
-                      
                       </tbody>
                      </table>
                     </div>
