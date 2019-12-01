@@ -8,7 +8,7 @@
           </div>
 
           <!-- Content Row -->
-          <div class="row">
+          <div class="row" id="dataServicos" >
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
@@ -16,8 +16,8 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> Serviços realizados(Mês) </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"> 150 </div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> Serviços Concluídos </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="servicosConcluidos">  </div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -33,8 +33,8 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1"> Pedidos a Realizar </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">20</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1"> Pedidos Solicitados </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="servicosSolicitados"></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -53,11 +53,11 @@
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1"> Tarefas </div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">75%</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="servicosPorcent"></div>
                         </div>
                         <div class="col">
                           <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-info" role="progressbar"  style="" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="barraProgss"></div>
                           </div>
                         </div>
                       </div>
@@ -77,7 +77,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pedidos em Atraso </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">10</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="atrasos"></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -115,7 +115,7 @@
                 <!-- Card Body -->
                 <div class="card-body" id="tabelaAgendamento">
                   <div class="chart-area">
-                  <div class="table-responsive">
+                  <div class="table-responsive table-hover">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
@@ -157,13 +157,13 @@
                 </div>
                 
                 <!-- Card Body Ajustar tamanho normal do card-body -->
-                <div class="card-body" style='min-height: 360px;'>
+                <div class="card-body" style='min-height: 360px; '>
                         <div class="row align-items-center justify-content " style='margin-bottom: 10px; margin-top: -15px;'> 
                           <div class="col"> Nome </div>
                           <div class="col"> CPF </div>
                           <div class="col"> Liberado Por. </div>         
                         </div>
-                 <div id='conteudoLiberacao'>
+                 <div id="conteudoLiberacao">
 
                  </div>   
 
@@ -186,9 +186,9 @@
                   <h6 class="m-0 font-weight-bold text-warning">Ordem de Serviço - Solicitadas </h6>
                 </div>
 
-                  <div style="overflow-y:scroll;">        
-                  <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <div>        
+                  <div class="table-responsive table-hover">
+                    <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
                           <th>Tipo de Servico</th>
@@ -199,7 +199,6 @@
                         </tr>
                       </thead>
                       <tbody id="corpoServicosAdm">
-                      
                       </tbody>
                      </table>
                     </div>

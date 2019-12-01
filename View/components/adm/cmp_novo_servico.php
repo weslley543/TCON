@@ -20,9 +20,14 @@
      <div class="form-group">
         <label for="exampleFormControlSelect1">Nome do Serviço</label>
         <input type="input-group-text" class="form-control" name="nome_tipo" placeholder="Insira o nome do serviço">
+        <button type="submit" class="btn btn-success">Criar</button>
     </div>
 
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Nome Area de Lazer </label>
+        <input type="input-group-text" class="form-control" name="nome_tipo" placeholder="Insira o nome da area">
         <button type="submit" class="btn btn-success">Criar</button>
+    </div>
 
     </form>
   </div>
