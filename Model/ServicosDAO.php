@@ -8,7 +8,7 @@ class ServicosDAO{
             echo "Problema interno do servidor";
             die();
         }
-        $result = mysqli_query($link,"CALL count_servicos($cod_usuario)") or die ($result->error);
+        $result = mysqli_query($link,"CALL count_servicos_adm()") or die ($result->error);
         $servicosTotal = $result->fetch_assoc();
         
         mysqli_close($link);
@@ -18,7 +18,7 @@ class ServicosDAO{
             echo "Problema interno do servidor";
             die();
         }
-        $result = mysqli_query($link,"CALL servicos_atraso($cod_usuario)") or die ($result->error);
+        $result = mysqli_query($link,"CALL servicos_atraso_adm()") or die ($result->error);
         $servicosAtrasados = $result->fetch_assoc();
         
         mysqli_close($link);
@@ -28,26 +28,29 @@ class ServicosDAO{
             echo "Problema interno do servidor";
             die();
         }
-        $result = mysqli_query($link,"CALL servicos_concluidos($cod_usuario)") or die ($result->error);
+        $result = mysqli_query($link,"CALL servicos_concluidos_adm()") or die ($result->error);
         $servicosConcluidos = $result->fetch_assoc();
         
         mysqli_close($link);
         
         if(floatval($servicosTotal["solicitados"])==0){
-            $porcentagem = (floatval($servicosConcluidos["concluidos"])/1)*100;
+            $porcentagem = (floatval($servicosConcluidos["concluidas"])/1)*100;
         }else{
-            $porcentagem = (floatval($servicosConcluidos["concluidos"])/floatval($servicosTotal["solicitados"]))*100;
+            $porcentagem = (floatval($servicosConcluidos["concluidas"])/floatval($servicosTotal["solicitados"]))*100;
         }
         
         
 
         $dados["solicitados"] = $servicosTotal["solicitados"];
         $dados["atrasados"] = $servicosAtrasados["atrasadas"];
-        $dados["concluidos"] = $servicosConcluidos["concluidos"];
+        $dados["concluidos"] = $servicosConcluidos["concluidas"];
         $dados["porcentagem"] = $porcentagem;
+
         return $dados;
         
     }
+
+    
     public function inserirServico($dados){
         $link = mysqli_connect("localhost", "root", "", "tcon");
         if(!$link){
@@ -101,4 +104,89 @@ class ServicosDAO{
         return true;
         
     }
+
+    public function servicoSolicitados(){
+        
+        $link = mysqli_connect("localhost", "root", "", "tcon");
+        if(!$link){
+            echo "Erro interno do servidor";
+            die();
+        }
+
+        $query = "SELECT * FROM servico";
+        $result = mysqli_query($link,$query);
+
+        while($row = $result->fetch_assoc()){
+            $resultSet[] = $row;
+        }
+        $dados = json_encode($resultSet, JSON_UNESCAPED_UNICODE);
+        mysqli_close($link);
+        return $dados;
+   }//end servicoSolicitados
+
+   public function agendamentos(){
+       $link = mysqli_connect("localhost", "root", "", "tcon");
+       if(!$link){
+           echo "Erro interno do servidor";
+           die();
+       }
+
+       $query = "CALL areas_reservadas()";
+       $result = mysqli_query($link,$query);
+       
+       while($row = $result->fetch_assoc()){
+           $resultSet[] = $row;
+       }
+
+       $dados = json_encode($resultSet, JSON_UNESCAPED_UNICODE);
+       mysqli_close($link);
+       
+       return $dados;
+
+   }//end agendamentos
+
+   public function liberacoes(){
+    $link = mysqli_connect("localhost", "root", "", "tcon");
+    if(!$link){
+            echo "Erro interno do servidor";
+            die();
+    }
+
+    $query = "CALL liberacaoHoje()";
+    $result = mysqli_query($link,$query);
+    
+    while($row = $result->fetch_assoc()){
+        $resultSet[] = $row;
+    }
+
+    $dados = json_encode($resultSet, JSON_UNESCAPED_UNICODE);
+    mysqli_close($link);
+
+    return $dados;
+   }//end liberacoes
+
+
+   public function usuariosCadastrados(){
+        
+        $link = mysqli_connect("localhost", "root", "","tcon");
+
+        if(!$link){
+            echo 'Erro interno do servidor';
+            die();
+        }
+
+        $query = "CALL usuariosCadastrados()";
+        $result = mysqli_query($link, $query);
+
+        while($row = $result->fetch_assoc()){
+            $resultSet[] = $row;
+        }
+
+        $dados = json_encode($resultSet, JSON_UNESCAPED_UNICODE);
+        mysqli_close($link);
+        return $dados;
+   }//end usuarios Cadastrados
+
+
+
 }

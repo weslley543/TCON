@@ -2,7 +2,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php?ref=cmp_conteudo_dashboard_2_1">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard_adm.php?ref=cmp_conteudo_dashboard_2_1">
         <div class="sidebar-brand-icon rotate-n-15">
         </div>
         <div class="sidebar-brand-text mx-3">TCON</div>
@@ -13,7 +13,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="dashboard.php?ref=cmp_conteudo_dashboard_2_1">
+        <a class="nav-link" href="dashboard_adm.php?ref=cmp_conteudo_dashboard_2_1">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span> Área do Administrador </span></a>
       </li>
@@ -38,7 +38,7 @@ l
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="dashboard.php?ref=cmp_perfil">Perfil</a>
+            <a class="collapse-item" href="dashboard_adm.php?ref=cmp_perfil">Perfil</a>
           </div>
         </div>
       </li>
@@ -55,9 +55,9 @@ l
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Tipo:</h6>
-            <a class="collapse-item" href="dashboard.php?ref=cmp_table_servicos_2_1">Criar Serviço</a>
-            <a class="collapse-item" href="dashboard.php?ref=cmp_table_servicos_2_1">Serviços Solicitados</a>
-            <a class="collapse-item" href="dashboard.php?ref=cmp_table_servicos_2_1">Usuários Cadastrados</a>
+            <a class="collapse-item" href="dashboard_adm.php?ref=cmp_novo_servico">Criar Serviço</a>
+            <a class="collapse-item" href="dashboard_adm.php?ref=cmp_table_servicos">Serviços Solicitados</a>
+            <a class="collapse-item" href="dashboard_adm.php?ref=cmp_table_users">Usuários Cadastrados</a>
           </div>
         </div>
       </li>

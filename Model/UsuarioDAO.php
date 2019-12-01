@@ -7,6 +7,7 @@ class UsuarioDAO{
             echo 'Erro interno do servidor';
             die();
         }
+    
         $dados["senha"]=sha1($dados["senha"]);
         foreach($dados as $coluna => $valor){
             $cols[] = $coluna;

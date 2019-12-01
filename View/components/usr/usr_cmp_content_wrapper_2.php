@@ -109,21 +109,21 @@
                 </h6>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                    <img class="rounded-circle" src="assets\img\joel.jpg" alt="">
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div class="font-weight-bold">
-                    <div class="text-truncate">Olá meu doce como voce esta ? Saudades do que nao vivemos ainda.</div>
+                    <div class="text-truncate">A troca de lampada já foi realizada ?</div>
                     <div class="small text-gray-500">Weslley Campos · 2hr+</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
-                    <div class="status-indicator"></div>
+                    <img class="rounded-circle" src="assets\img\ronaldo.jpg" alt="">
+                    <div class="status-indicator bg-danger"></div>
                   </div>
                   <div>
-                    <div class="text-truncate">Como está o trabalho ? E as Triggers e as Procedures ?</div>
+                    <div class="text-truncate">Por favor, verificar a liberação do Salão de Festas</div>
                     <div class="small text-gray-500">Ronaldo · 1d</div>
                   </div>
                 </a>
@@ -133,17 +133,17 @@
                     <div class="status-indicator bg-warning"></div>
                   </div>
                   <div>
-                    <div class="text-truncate">Conseguiu ver com a manutenção o encanamento quebrado ? </div>
+                    <div class="text-truncate">O encanamento da rua 10 está quebrado ? </div>
                     <div class="small text-gray-500">Marta Azevedo · 2d</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                    <img class="rounded-circle" src="assets\img\gust.jpg" alt="">
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div>
-                    <div class="text-truncate">Meu cachorro escapou, alguem viu ele por ai ? </div>
+                    <div class="text-truncate">Meu cachorro escapou, alguem viu ele pelo condominio ? </div>
                     <div class="small text-gray-500"> Gustavo Serpeloni · 3d</div>
                   </div>
                 </a>
