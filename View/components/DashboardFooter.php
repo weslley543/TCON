@@ -6,10 +6,12 @@
     <!-- Core plugin JavaScript-->
   
 
+
     <!-- Custom scripts for all pages-->
     <script src="assets/js/sb-admin-2.min.js"></script>
+    <script src="assets\js\funcoesServico.js"> </script>
+    <script src="assets\js\funcoes.js"> </script>
 
-    
 
 
    <!-- Page level plugins -->
