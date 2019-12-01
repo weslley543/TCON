@@ -116,3 +116,23 @@ $("#tabelaServicos2").ready(function(){
         }
     });
 });
+
+
+//- Qtd de Pedidos Diversos (Dashboard)
+$("#dataServicos").ready(function(){
+
+    $.ajax({
+        url: 'Controllers/Servicos.php',
+        method: "GET",
+        data:"op=pegarServicos",
+        dataType: "json",
+        success:function(response){
+            $("#servicosConcluidos").html(response['concluidos']);
+            $("#servicosSolicitados").html(response['solicitados']);
+            $("#servicosPorcent").html(response['porcentagem']+"%");
+            $("#barraProgss").css("width",response['porcentagem']+'%');
+            $("#atrasos").html(response['atrasados']);             
+        }
+    }); 
+
+});
