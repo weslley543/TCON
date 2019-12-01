@@ -31,9 +31,7 @@ class MapDAO{
         foreach($a as $as){
             $retorno ["lat"] = $as["lat"];
             $retorno ["lng"] = $as["lng"];
-            $retorno ["data"] = strtotime($as["data"])
+            $retorno ["data"] = $as["data"];
         }
-        
-        die();
     }
 }
