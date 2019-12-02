@@ -1,6 +1,6 @@
-              
+
         <!-- Begin Page  DashBoard Content -->
-        <input type="hidden" id="cod_usuario" value="<?= $cod_logado?>">
+        <input type="hidden" id="cod_usuario" value="">
         <div class="container-fluid">
 
           <!-- Page Heading -->
@@ -19,7 +19,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> Serviços Solicitados </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="Solicitados"> </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="servicosSolicitados_usr"> </div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -36,7 +36,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1"> Pedidos Concluídos </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="concluidos"></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="servicosConcluidos_usr"></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -55,11 +55,11 @@
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1"> Tarefas </div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="porcentagem"></div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="servicosPorcent_usr"></div>
                         </div>
                         <div class="col">
                           <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 2" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-info" role="progressbar" id="barraProgss_usr" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
                       </div>
@@ -79,7 +79,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pedidos em Atraso </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="atraso"></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="atrasos_usr"></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
