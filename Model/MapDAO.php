@@ -10,7 +10,7 @@ class MapDAO{
         
             $db = $client->BDWork;
             $collection = $db->Localizacao;
-            if($collection->insertOne(array("lat"=>-50.191651, "lng"=>-86.3153115, "data" => date('d/m/Y H:i:s')))){
+            if($collection->insertOne($data)){
                 return true;
             }
             return false;

@@ -20,6 +20,7 @@
             <th>Usuario Solicitante</th>
             <th>Data-Cadastrada</th>
             <th>Data-Concluída</th>
+            <th>Ações</th>
           </tr>
         </thead>
         <tbody id='corpoTabela'>

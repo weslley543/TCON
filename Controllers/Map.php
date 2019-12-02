@@ -22,5 +22,14 @@ class Map{
 }
 
 
-$map = new Map();
-$map->getPositions();
+switch ($_SERVER['REQUEST_METHOD']){
+    case "POST": 
+        $map = new Map();
+        $servico->insertPosition($_POST);
+    break;
+    case "GET":
+        $map = new Map();
+    break;
+
+
+}

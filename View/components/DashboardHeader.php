@@ -10,6 +10,7 @@
   <meta name="author" content="">
 
   <title>TCON - Condominios Inteligentes</title>
+  <link href="assets/css/all.min.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- Custom fonts for this template-->
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

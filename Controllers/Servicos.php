@@ -59,11 +59,15 @@ class Servicos {
         header('Content-Type: application/json; charset=utf-8');
         echo($dados);
     }
-
-
+    public function concluir($data){
+        $servicos= new ServicosDAO();
+        $retorno = $servicos->concluir($data);
+        $dados = json_encode($retorno, JSON_UNESCAPED_UNICODE);
+        header('Content-Type: application/json; charset=utf-8');
+        echo $dados;
+    }
 }
 
-    
     switch ($_SERVER['REQUEST_METHOD']){
         case "GET" && array_key_exists("op",$_GET) && $_GET["op"] == "pegarServicos": 
             $servico = new Servicos();
@@ -104,6 +108,13 @@ class Servicos {
             $servico = new Servicos();
             unset($_POST["op"]);
             $servico->agendarArea($_POST);
+        break;
+        case "POST" &&  array_key_exists("op",$_POST) && $_POST["op"] == "concluir":
+            $servico = new Servicos();
+            unset($_POST["op"]);
+            //var_dump($_POST);
+            $servico = new Servicos();
+            $servico->concluir($_POST);
         break;
 
     }

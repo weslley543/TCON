@@ -187,6 +187,19 @@ class ServicosDAO{
         return $dados;
    }//end usuarios Cadastrados
 
-
+   public function concluir($data){
+       $link = mysqli_connect("localhost", "root", "","tcon");
+       if(!$link){
+            echo 'Erro interno do servidor';
+            die();
+       }
+       $query = "UPDATE servico set data_concluida = "."'".date('Y-m-d H:m:s')."'"." WHERE cod_servico = ".$data["cod_servico"];
+       echo $query;
+       die();
+       if(mysqli_query($link, $query)){
+            return true;
+       }
+       return false;
+    }
 
 }

@@ -29,13 +29,16 @@ $("#tabelaServicos").ready(function(){
         dataType: "json",
         success: function(response){
             let html = '';
+            //console.log(response);
             for(let i= 0 ;i < response.length; i++){
-                html+="<tr><td>"+response[i].cod_servico+"</td>";
+                //html+="<tr><td>"+response[i].cod_servico+"</td>";
+                html+="<tr data-id="+"'"+response[i].cod_servico+"'><td>"+response[i].cod_servico+"</td>";
                 html+="<td>"+response[i].cod_servico_tipo+"</td>";
                 html+="<td>"+response[i].obs_servico+"</td>";
                 html+="<td>"+response[i].data_cadatrada+"</td>";
                 html+="<td>"+response[i].data_concluida+"</td>";
                 html+="<td>"+response[i].cod_servico_tipo+"</td>";
+                html+="<td><button class='btn btn-warning'><i class='fas fa-edit'></i></button> <button style='margin-top:3px;' class='btn btn-primary'"+"onclick="+"funcaoConcluir("+response[i].cod_servico+")>"+"<i class='fas fa-check'></i></button></td>"
                 html+="</tr>";
             }
             $('#corpoTabela').html(html);
@@ -136,3 +139,14 @@ $("#dataServicos").ready(function(){
     }); 
 
 });
+
+function funcaoConcluir(codServico){
+    $.ajax({
+        url:'Controllers/Servicos.php',
+        method:'POST',
+        data:"op=concluir&cod_servico="+codServico,
+        success:function(response){
+            console.log(response);
+        }
+    });
+}
