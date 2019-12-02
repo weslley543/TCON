@@ -20,9 +20,10 @@
                 <button class="btn btn-primary" style="margin-top:20px;">Enviar</button>
         </div>
     </div>
-    <div id="cadastrar" class="col-md-12">
-        <h3>Cadastar Novo Servidor</h3>
-        <form action="Controllers/Usuario.php" class="form-group">
+
+    <div class="row">
+    <h3>Cadastar Novo Servidor</h3>
+        <form action="Controllers/Adm.php" method="POST" class="form-group">
             <div class="row">
                 <div class="col-md-6">
                     <label for="">Nome do Servidor</label>
@@ -39,18 +40,20 @@
                 </div>
                 <div class="col-md-6">
                     <label for="">Tipo de Usuário</label>
-                    <select name="usuario_tipo" id="selectTipo" class="form-control">
+                    <select name="tipo_usuario" id="selectTipo" class="form-control">
 
                     </select>
                 </div>
+                <input type="hidden" name="op" value="cadastro">
                 <div class="col-md-1" style="margin-top:20px;">
                     <button class="btn btn-primary" id="botaoCadastrar">Cadastrar</button>
                 </div>
             </div>
         </form>
     </div>
+
 </div>
-</div>
+
 
 <script>
     $('#cadastrar').ready(function() {

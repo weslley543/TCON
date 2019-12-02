@@ -31,6 +31,12 @@ class Adm{
         $retorno = $admDao->tipoUsuario();
         echo $retorno;
     }
+    public function cadastrarUsuario($dados){
+        $admDao = new AdmDAO();
+        $admDao->insertUsuario($dados);
+        header('Location: ' . '../servicosAdm.php', true);
+       
+    }
 }
 
 switch ($_SERVER['REQUEST_METHOD']){
@@ -49,4 +55,11 @@ switch ($_SERVER['REQUEST_METHOD']){
         unset($_GET["op"]);
         $adm->pegarTipoUsr($_GET);
     break;
+    case 'POST' && array_key_exists("op", $_POST)&& $_POST['op']=='cadastro': 
+        $adm = new Adm();
+        unset($_POST['op']);
+        unset($_POST['senha2']);
+        $dados = $_POST;
+        $adm->cadastrarUsuario($dados);
+        break;
 }
