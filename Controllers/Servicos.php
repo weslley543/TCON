@@ -67,7 +67,7 @@ class Servicos {
     switch ($_SERVER['REQUEST_METHOD']){
         case "GET" && array_key_exists("op",$_GET) && $_GET["op"] == "pegarServicos": 
             $servico = new Servicos();
-            $servico->pegarServicos();
+            $servico->pegarServicos(1);
         break;
         
         case "GET" && array_key_exists("op",$_GET) && $_GET["op"] == "servicoSolicitado":
