@@ -14,35 +14,35 @@
 
   <div class="form-group">
         <label for="exampleInputEmail1">Nome - Usuario</label>
-        <input type="input" class="form-control" id="nome_sobrenome"  placeholder="Receber dados por PHP">
+        <input type="input" class="form-control" id="nome_sobrenome"  placeholder="">
   </div>
 
   <div class="form-group">
         <label for="exampleInputEmail1">Rg</label>
-        <input type="input" class="form-control" id="usr_rg"  placeholder="Receber dados por PHP">
+        <input type="input" class="form-control" id="usr_rg"  placeholder="">
   </div>
 
   <div class="form-group">
         <label for="exampleInputEmail1">Endereço</label>
-        <input type="input" class="form-control" id="nome_sobrenome"  placeholder="Receber dados por PHP">
+        <input type="input" class="form-control" id="endereco_usr"  placeholder="">
   </div>
 
   <div class="form-group">
         <label for="exampleInputEmail1">Casa</label>
-        <input type="input" class="form-control" id="n_casa"  placeholder="Receber dados por PHP">
+        <input type="input" class="form-control" id="n_casa"  placeholder="">
   </div>
 
 
   <div class="form-group">
         <label for="exampleInputEmail1">Email</label>
-        <input type="input" class="form-control" id="nome_sobrenome"  placeholder="Receber dados por PHP">
+        <input type="input" class="form-control" id="email"  placeholder="">
   </div>
 
   <div class="form-group">
   <label for="exampleInputEmail1">Telefone / Celular</label>
     <div class="row">
-        <input type="input" class="form-control col-md-6" id="n_telefone"  placeholder="Receber dados por PHP">
-        <input type="input" class="form-control col-md-6" id="n_celular"  placeholder="Receber dados por PHP">
+        <input type="input" class="form-control col-md-6" id="n_telefone"  placeholder="">
+        <input type="input" class="form-control col-md-6" id="n_celular"  placeholder="">
     </div>
 
 </div>
@@ -51,8 +51,8 @@
   <div class="form-group">
         <label for="exampleInputEmail1">Senhas</label>
         <div class="row">
-          <input type="input" class="form-control col-md-6" id="old_senha"  placeholder="Receber dados por PHP - senha atual">
-          <input type="input" class="form-control col-md-6" id="new_senha"  placeholder="Receber dados por PHP - senha nova">
+          <input type="input" class="form-control col-md-6" id="old_senha"  placeholder="">
+          <input type="input" class="form-control col-md-6" id="new_senha"  placeholder="">
         </div>
   </div>
 
