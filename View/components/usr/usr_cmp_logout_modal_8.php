@@ -11,7 +11,7 @@
         <div class="modal-body">Caso queira sair clique em 'Logout', caso contrário em 'Cancelar'</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-          <a class="btn btn-primary" href="View/login.php">Logout</a>
+          <a class="btn btn-primary" href="dashboard_usr.php?ref=logout">Logout</a>
         </div>
       </div>
     </div>
