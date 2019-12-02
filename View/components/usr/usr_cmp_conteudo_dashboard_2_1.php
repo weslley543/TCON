@@ -1,6 +1,6 @@
-              
+
         <!-- Begin Page  DashBoard Content -->
-        <input type="hidden" id="cod_usuario" value="<?= $cod_logado?>">
+        <input type="hidden" id="cod_usuario" value="">
         <div class="container-fluid">
 
           <!-- Page Heading -->
@@ -19,7 +19,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> Serviços Solicitados </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="Solicitados"> </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="servicosSolicitados_usr"> </div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -36,7 +36,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1"> Pedidos Concluídos </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="concluidos"></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="servicosConcluidos_usr"></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -55,11 +55,11 @@
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1"> Tarefas </div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="porcentagem"></div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="servicosPorcent_usr"></div>
                         </div>
                         <div class="col">
                           <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 2" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-info" role="progressbar" id="barraProgss_usr" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
                       </div>
@@ -79,7 +79,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pedidos em Atraso </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="atraso"></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="atrasos_usr"></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -115,10 +115,10 @@
                   </div>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">
+                <div class="card-body" id="agedamentosUsr">
                   <div class="chart-area">
                   <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
                           <th>Área Reservada</th>
@@ -126,14 +126,7 @@
                           <th>Data de Entrega</th>
                         </tr>
                       </thead>
-                      <tbody>
-                          <?php $cont = 0; while($cont <= 4){ ?>
-                            <tr>
-                              <td><?php echo 'Salão de Festas'; ?></td>
-                              <td><?php echo '29-11-2019'; ?></td>
-                              <td><?php echo '01-12-2019'; ?></td>
-                            </tr>
-                          <?php $cont = $cont + 1; };?>
+                      <tbody id="corpoTabelaAtrasados">
                       </tbody>
                      </table>
                     </div>
@@ -144,12 +137,12 @@
 
             <!-- Pie Chart -->
 
-            <div class="col-xl-4 col-lg-5">
+            <div class="col-xl-4 col-lg-5" id="liberacores_usr">
               <div class="card shadow mb-4">
               
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary"> Gráfico de Serviços </h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Liberações </h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -163,24 +156,22 @@
                     </div>
                   </div>
                 </div>
-                
-                <!-- Card Body -->
-                <div class="card-body">
-                  <div class="chart-pie pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
-                  </div>
-                  <div class="mt-4 text-center small">
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-primary"></i> Direct
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Social
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-info"></i> Referral
-                    </span>
-                  </div>
-                </div>
+
+
+               <!-- Card Body Ajustar tamanho normal do card-body -->
+               <div class="card-body" style='min-height: 360px; '>
+                        <div class="row align-items-center justify-content " style='margin-bottom: 10px; margin-top: -15px;'> 
+                          <div class="col"> Nome </div>
+                          <div class="col"> CPF </div>
+                          <div class="col"> Data </div>
+                        </div>
+                 <div id="conteudoLiberacao_usr">
+
+                 </div>   
+
+
+                </div> 
+                <!-- End Card body -->
               </div>
             </div>
           </div>
