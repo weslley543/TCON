@@ -39,7 +39,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Bem vindo</h1>
                   </div>
-                  <form class="user" action="Controllers/Adm.php" method="POST">
+                  <form class="user" action="Controllers/Usuario.php" method="POST">
                     <div class="form-group">
                       <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Coloque seu email...">
                     </div>

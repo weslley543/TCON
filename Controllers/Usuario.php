@@ -21,11 +21,26 @@ class Usuario{
     public function login($dados){
         $usuarioDAO = new UsuarioDAO();
         if($usuario = $usuarioDAO->loginUsuario($dados)){
-            session_start();
-            $_SESSION["email"]=$dados["email"];
-            $_SESSION["senha"]=$dados["senha"];
-            $_SESSION["dados"] = $usuario;
-            header('location: ../dashboard_usr.php');
+            // session_start();
+            // $_SESSION["email"]=$dados["email"];
+            // $_SESSION["senha"]=$dados["senha"];
+            // $_SESSION["dados"] = $usuario;
+            // header('location: ../dashboard_usr.php');
+            if($usuario["tipo_usuario"]=="9"){
+                session_start();
+                $_SESSION["email"]=$dados["email"];
+                $_SESSION["senha"]=$dados["senha"];
+                $_SESSION["dados"] = $usuario;
+                header('location: ../dashboard_usr.php');
+            }else{
+                session_start();
+                $_SESSION["email"]=$dados["email"];
+                $_SESSION["senha"]=$dados["senha"];
+                $_SESSION["dados"] = $usuario;
+                header('location: ../dashboard_usr.php'); 
+            }
+            
+
         }else{
             unset ($_SESSION['email']);
             unset ($_SESSION['senha']);
