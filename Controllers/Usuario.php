@@ -77,26 +77,27 @@ class Usuario{
         
     }
 }
+var_dump($_POST);
 
-switch ($_SERVER['REQUEST_METHOD']){
-    case 'POST' && $_POST['op']=='cadastro': 
-                    $usuario = new Usuario();
-                    unset($_POST['op']);
-                    unset($_POST['senha2']);
-                    $dados = $_POST;
-                    $usuario->cadastrarUsuario($dados);
-                    break;
-    case 'POST' && $_POST['op']=='login' :
-                    $usuario = new Usuario();
-                    unset($_POST['op']);
-                    $dados = $_POST;
-                    str_replace($dados['email'],"'", "''");
-                    $usuario->login($dados);
-                    break;
-    case 'POST' && $_POST['op']=='recuperacao' :
-                    $usuario = new Usuario();
-                    $dados = $_POST;
-                    str_replace($dados['email'], "'", "''");
-                    $usuario->recuperarSenha($dados);
-                    break;
-}
+// switch ($_SERVER['REQUEST_METHOD']){
+//     case 'POST' && $_POST['op']=='cadastro': 
+//                     $usuario = new Usuario();
+//                     unset($_POST['op']);
+//                     unset($_POST['senha2']);
+//                     $dados = $_POST;
+//                     $usuario->cadastrarUsuario($dados);
+//                     break;
+//     case 'POST' && $_POST['op']=='login' :
+//                     $usuario = new Usuario();
+//                     unset($_POST['op']);
+//                     $dados = $_POST;
+//                     str_replace($dados['email'],"'", "''");
+//                     $usuario->login($dados);
+//                     break;
+//     case 'POST' && $_POST['op']=='recuperacao' :
+//                     $usuario = new Usuario();
+//                     $dados = $_POST;
+//                     str_replace($dados['email'], "'", "''");
+//                     $usuario->recuperarSenha($dados);
+//                     break;
+// }
