@@ -1,5 +1,5 @@
   <!-- Begin Page Content -->
-  <div class="container-fluid">
+  <div class="container-fluid" id="perfilUser">
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800"> Perfil do Usuário</h1>
@@ -24,7 +24,7 @@
 
   <div class="form-group">
         <label for="exampleInputEmail1">Endereço</label>
-        <input type="input" class="form-control" id="nome_sobrenome"  placeholder="">
+        <input type="input" class="form-control" id="endereco_usr"  placeholder="">
   </div>
 
   <div class="form-group">
@@ -35,7 +35,7 @@
 
   <div class="form-group">
         <label for="exampleInputEmail1">Email</label>
-        <input type="input" class="form-control" id="nome_sobrenome"  placeholder="">
+        <input type="input" class="form-control" id="email"  placeholder="">
   </div>
 
   <div class="form-group">
@@ -51,8 +51,8 @@
   <div class="form-group">
         <label for="exampleInputEmail1">Senhas</label>
         <div class="row">
-          <input type="input" class="form-control col-md-6" id="old_senha"  placeholder="....">
-          <input type="input" class="form-control col-md-6" id="new_senha"  placeholder="Receber dados por PHP - senha nova">
+          <input type="input" class="form-control col-md-6" id="old_senha"  placeholder="">
+          <input type="input" class="form-control col-md-6" id="new_senha"  placeholder="">
         </div>
   </div>
 

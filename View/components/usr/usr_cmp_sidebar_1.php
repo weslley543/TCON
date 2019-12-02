@@ -3,7 +3,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard_usr.php">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard_usr.php?ref=usr_cmp_conteudo_dashboard_2_1">
   <div class="sidebar-brand-icon rotate-n-15">
   </div>
   <div class="sidebar-brand-text mx-3">TCON - Usuário</div>
@@ -14,7 +14,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-  <a class="nav-link" href="index.php?ref=usr_cmp_conteudo_dashboard_2_1">
+  <a class="nav-link" href="dashboard_usr.php?ref=usr_cmp_conteudo_dashboard_2_1">
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span> Área do Usuário </span></a>
 </li>

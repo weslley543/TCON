@@ -1,20 +1,19 @@
 //JS para agendamentos:
-$("#tabelaAgendamento").ready(function(){
+$("#agedamentosUsr").ready(function(){
     $.ajax({
-        url: "Controllers/Servicos.php",
+        url: "Controllers/Servicos_usr.php",
         method: "GET",
-        data: "op=agendamentos",
+        data: "op=agendamentos_usr",
         dataType: "json",        
         success: function(response){
             let html = '';
             for(let i= 0 ;i < response.length; i++){
-                html+="<tr><td>"+response[i].cod_area_lazer+"</td>";
-                html+="<td>"+response[i].nome_usuario+"</td>";
+                html+="<tr><td>"+response[i].desc_area+"</td>";
                 html+="<td>"+response[i].data_agendou+"</td>";
                 html+="<td>"+response[i].data_entrega+"</td>";
                 html+="</tr>";
             }
-            $('#corpoAgendamento').html(html);
+            $('#corpoTabelaAtrasados').html(html);
         }
 
     });
@@ -42,11 +41,11 @@ $("#dataServicosUsr").ready(function(){
 
 // Tabela liberacao de pessoas :
 
-$('#tabelaLiberacao').ready(function(){
+$('#liberacores_usr').ready(function(){
     $.ajax({
-        url: "Controllers/Servicos.php",
+        url: "Controllers/Servicos_usr.php",
         method: "GET",
-        data: 'op=liberacao',
+        data: 'op=liberacao_usr',
         dataType: 'json',
         success:function(response){
             let html = '';
@@ -54,37 +53,33 @@ $('#tabelaLiberacao').ready(function(){
                 html += '<div class="row align-items-center justify-content  border border rounded-sm" style="margin-bottom: 3px;">';
                 html += '<div class="col">' + response[i].nome_pessoa + '</div>';
                 html += '<div class="col">' + response[i].cpf_ou_rg   + '</div>';
-                html += '<div class="col">' + response[i].nome_usuario + '</div>';         
+                html += '<div class="col">' + response[i].data_liberacao + '</div>';
                 html += '</div>';
             }
-            $('#conteudoLiberacao').html(html);
+            $('#conteudoLiberacao_usr').html(html);
         }
     });
 });
 
 
 //Tabela de Usuarios Cadastrados: 
-$("tabelaUsuarios").ready(function(){
+$("perfilUser").ready(function(){
 
     $.ajax({
-        url: "Controllers/Servicos.php",
+        url: "Controllers/Servicos_usr.php",
         method: "GET",
-        data: 'op=getusuarios',
+        data: 'op=perfil_usr',
         dataType: 'json',
 
         success:function(response){
-            let html = '';
-            for(let i=0; i < response.length; i++){
-                html+="<tr><td>"+response[i].nome_usuario+"</td>";
-                html+="<td>"+response[i].endereco_usuario+"</td>";
-                html+="<td>"+response[i].casa_usuario+"</td>";
-                html+="<td>"+response[i].email+"</td>";
-                html+="<td>"+response[i].telefone_usuario+"</td>";
-                html+="<td>"+response[i].celular_usuario+"</td>";
-                html+="</tr>";
-           }
-
-             $("#corpoTableUsuario").html(html);              
+            $('#nome_sobrenome').val(response[0].nome_usuario);
+            $('#usr_rg').val(response[0].rg_usuario);
+            $('#endereco_usr').val(response[0].endereco_usuario);
+            $('#n_casa').val(response[0].casa_usuario);
+            $('#email').val(response[0].email);
+            $('#n_telefone').val(response[0].telefone_usuario);
+            $('#n_celular').val(response[0].celular_usuario);
+        
         }
     });
 }); //end usuarios cadastrados

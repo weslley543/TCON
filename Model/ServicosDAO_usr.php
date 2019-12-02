@@ -84,6 +84,7 @@ class ServicosDAO_usr{
         
     }
 
+
     public function pegarServicos($cod_usuario){
         
         $cod_usuario = 1;
@@ -106,35 +107,40 @@ class ServicosDAO_usr{
    }//end servicoSolicitados
 
 
-   public function agendamentos(){
+   public function agendamentos_usr($cod_usuario){
+      
+       $cod_usuario = 1;
        $link = mysqli_connect("localhost", "root", "", "tcon");
+
        if(!$link){
            echo "Erro interno do servidor";
            die();
        }
 
-       $query = "CALL areas_reservadas()";
+       $query = "CALL areas_reservadas_usr($cod_usuario);";
        $result = mysqli_query($link,$query);
-       
-       while($row = $result->fetch_assoc()){
-           $resultSet[] = $row;
-       }
 
+       while($row = $result->fetch_assoc()){
+             $resultSet[] = $row;
+       }
        $dados = json_encode($resultSet, JSON_UNESCAPED_UNICODE);
        mysqli_close($link);
-       
+          
        return $dados;
 
    }//end agendamentos
 
-   public function liberacoes(){
+
+   public function liberacoes_usr($cod_usuario){
+
+    $cod_usuario = 1;
     $link = mysqli_connect("localhost", "root", "", "tcon");
     if(!$link){
             echo "Erro interno do servidor";
             die();
     }
 
-    $query = "CALL liberacaoHoje()";
+    $query = "CALL liberacoes_usr($cod_usuario)";
     $result = mysqli_query($link,$query);
     
     while($row = $result->fetch_assoc()){
@@ -148,8 +154,9 @@ class ServicosDAO_usr{
    }//end liberacoes
 
 
-   public function usuariosCadastrados(){
+   public function perfil_usr($cod_usuario){
         
+        $cod_usuario = 1;
         $link = mysqli_connect("localhost", "root", "","tcon");
 
         if(!$link){
@@ -157,7 +164,7 @@ class ServicosDAO_usr{
             die();
         }
 
-        $query = "CALL usuariosCadastrados()";
+        $query = "SELECT * FROM usuario WHERE cod_usuario = $cod_usuario";
         $result = mysqli_query($link, $query);
 
         while($row = $result->fetch_assoc()){
@@ -166,8 +173,9 @@ class ServicosDAO_usr{
 
         $dados = json_encode($resultSet, JSON_UNESCAPED_UNICODE);
         mysqli_close($link);
+
         return $dados;
-   }//end usuarios Cadastrados
+   }//end perfil do usuario
 
 
 
