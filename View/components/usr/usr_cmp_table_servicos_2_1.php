@@ -19,7 +19,6 @@
             <th>Observação</th>
             <th>Data Cadastrada</th>
             <th>Data Concluida</th>
-            <th>Prioridade !</th>
           </tr>
         </thead>
         <tbody id="corpoTabelaUsr">

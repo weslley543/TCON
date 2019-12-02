@@ -2,7 +2,7 @@
 
 class ServicosDAO_usr{
     
-    public function pegarServicos_usr($cod_usuario){
+    public function servicosSolicitados_usr($cod_usuario){
 
         $cod_usuario = 1;
         $link= mysqli_connect("localhost", "root", "", "tcon");
@@ -56,32 +56,6 @@ class ServicosDAO_usr{
     }
 
     
-    public function inserirServico($dados){
-        $link = mysqli_connect("localhost", "root", "", "tcon");
-        if(!$link){
-            echo "Erro interno do servidor";
-            die();
-        }
-        $dados["data_cadatrada"] = date("Y/m/d H:m:s");
-        if(isset($dados["obs_servico"])){
-            $dados["obs_servico"] = "Sem obs";
-        }
-        foreach($dados as $coluna => $valor){
-            $cols[] = $coluna;
-            $vals[] =  $valor;
-        }
-        
-        $colnames = implode(", ", $cols);
-        $colvals = "'".implode("', '", $vals)."'";
-        $query = "INSERT INTO servico ($colnames) values ($colvals)";
-        $result=mysqli_query($link, $query);
-        if(!$result){
-            return false;
-            die();
-        }
-        return true;
-    }
-
     public function agendarArea($dados){
         $link = mysqli_connect("localhost", "root", "", "tcon");
         if(!$link){
@@ -110,15 +84,16 @@ class ServicosDAO_usr{
         
     }
 
-    public function servicoSolicitados(){
+    public function pegarServicos($cod_usuario){
         
+        $cod_usuario = 1;
         $link = mysqli_connect("localhost", "root", "", "tcon");
         if(!$link){
             echo "Erro interno do servidor";
             die();
         }
 
-        $query = "SELECT * FROM servico";
+        $query = "CALL servicos_usr($cod_usuario)";
         $result = mysqli_query($link,$query);
 
         while($row = $result->fetch_assoc()){
@@ -126,8 +101,10 @@ class ServicosDAO_usr{
         }
         $dados = json_encode($resultSet, JSON_UNESCAPED_UNICODE);
         mysqli_close($link);
+
         return $dados;
    }//end servicoSolicitados
+
 
    public function agendamentos(){
        $link = mysqli_connect("localhost", "root", "", "tcon");
