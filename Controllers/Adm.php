@@ -58,8 +58,8 @@ switch ($_SERVER['REQUEST_METHOD']){
     case 'POST' && array_key_exists("op", $_POST)&& $_POST['op']=='cadastro': 
         $adm = new Adm();
         unset($_POST['op']);
-        unset($_POST['senha2']);
-        $dados = $_POST;
-        $adm->cadastrarUsuario($dados);
+        unset($_POST['nome_tipo']);
+        unset($_POST['prioridade']);
+        $adm->cadastrarUsuario($_POST);
         break;
 }

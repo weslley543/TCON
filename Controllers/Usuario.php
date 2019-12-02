@@ -37,7 +37,7 @@ class Usuario{
                 $_SESSION["email"]=$dados["email"];
                 $_SESSION["senha"]=$dados["senha"];
                 $_SESSION["dados"] = $usuario;
-                header('location: ../dashboard_usr.php'); 
+                header('location: ../dashboard_adm.php'); 
             }
             
 

@@ -58,6 +58,7 @@ l
             <a class="collapse-item" href="dashboard_adm.php?ref=cmp_novo_servico">Criar Serviço</a>
             <a class="collapse-item" href="dashboard_adm.php?ref=cmp_table_servicos">Serviços Solicitados</a>
             <a class="collapse-item" href="dashboard_adm.php?ref=cmp_table_users">Usuários Cadastrados</a>
+            <a class="collapse-item" href="servicosAdm.php">Adicionar Novos Tipos</a>
           </div>
         </div>
       </li>
