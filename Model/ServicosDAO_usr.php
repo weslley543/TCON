@@ -87,7 +87,7 @@ class ServicosDAO_usr{
 
     public function pegarServicos($cod_usuario){
         
-        $cod_usuario = 1;
+        $cod_usuario = $cod_usuario;
         $link = mysqli_connect("localhost", "root", "", "tcon");
         if(!$link){
             echo "Erro interno do servidor";
@@ -109,7 +109,7 @@ class ServicosDAO_usr{
 
    public function agendamentos_usr($cod_usuario){
       
-       $cod_usuario = 1;
+       $cod_usuario = $cod_usuario;
        $link = mysqli_connect("localhost", "root", "", "tcon");
 
        if(!$link){
@@ -133,7 +133,7 @@ class ServicosDAO_usr{
 
    public function liberacoes_usr($cod_usuario){
 
-    $cod_usuario = 1;
+    $cod_usuario = $cod_usuario;
     $link = mysqli_connect("localhost", "root", "", "tcon");
     if(!$link){
             echo "Erro interno do servidor";
